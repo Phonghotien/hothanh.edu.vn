@@ -1,0 +1,72 @@
+@import "../core";
+
+.card {
+   cursor: pointer;
+   position: relative;
+   z-index: 1;
+   padding-bottom: var(--dist40);
+
+
+
+   &-inner {
+      position: relative;
+      @include flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--dist20);
+      padding: var(--dist40) var(--dist24);
+      background: $color-linear-3;
+      border-radius: var(--dist24);
+      overflow: hidden;
+      box-shadow: $shadow;
+      z-index: 1;
+
+      &::before {
+         position: absolute;
+         content: '';
+         inset: 0;
+         background-color: $color-pri;
+         z-index: -1;
+         transform: scale(0);
+         border-radius: 100%;
+         transition: all .3s ease;
+      }
+   }
+
+   &:hover {
+      &::before {
+         opacity: 1;
+         transform: translate(-50%, 0);
+      }
+
+      .card-inner {
+         &::before {
+            transform: scale(1.5);
+         }
+      }
+
+      .txt {
+         color: $color-white;
+      }
+   }
+
+   .icon {
+      --wicon: 8rem;
+      width: var(--wicon);
+      height: var(--wicon);
+      @include mid-flex;
+
+      img {
+         @include imgct;
+      }
+   }
+
+   .txt {
+      @include fz-24;
+      font-weight: 700;
+      text-align: center;
+      color: $color-pri;
+      text-wrap: pretty;
+      transition: all .3s ease;
+   }
+}

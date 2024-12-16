@@ -1,0 +1,398 @@
+@import "../core";
+
+
+textarea {
+   width: 100% !important;
+   resize: none;
+}
+
+.select2 {
+   &.select2-container--open {}
+}
+
+.wpcf7 form .wpcf7-spinner {
+   margin: 0 !important;
+   left: 50%;
+   top: 50%;
+   bottom: auto !important;
+   transform: translate(-50%, -50%);
+}
+
+.form {
+   &-row {
+      --col-gap: 1.6rem;
+      --row-gap: 1.6rem;
+
+   }
+
+   &-col {
+      @include max(500px) {
+         width: 100%;
+      }
+   }
+
+   &-item {
+      @include flex;
+      flex-direction: column;
+      gap: .8rem;
+      position: relative;
+
+      @include max(800px) {
+         gap: .4rem;
+      }
+
+      textarea {
+         height: auto !important;
+      }
+
+      textarea,
+      input {
+         width: 100%;
+         font-size: 1.4rem;
+         color: $color-text;
+         font-family: var(--font-sec);
+         font-weight: 400;
+         outline: none;
+
+         @include max(800px) {
+            font-size: 1.4rem;
+         }
+
+         &::placeholder {
+            font-size: 1.4rem;
+            color: $color-text-7;
+            font-family: var(--font-pri);
+            font-weight: 300;
+            line-height: 150%;
+         }
+      }
+
+      .wpcf7-form-control-wrap {
+         width: 100%;
+         display: block;
+      }
+
+      .wpcf7-not-valid-tip {
+         left: 0 !important;
+         bottom: -1.5rem;
+         top: auto !important;
+      }
+
+      &.valid,
+      &.focus {
+         .form-lb {
+            // top: .8rem;
+            // font-size: 1.2rem;
+            // color: $color-pri;
+         }
+      }
+
+      &.files {
+         flex-direction: row;
+         gap: 3.2rem;
+
+         .form-lb {
+            width: fit-content;
+            font-size: 1.6rem;
+            font-weight: 600;
+         }
+
+         .form-file {
+            flex: 1;
+
+            .inner {
+               flex: 1;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               gap: 1rem;
+            }
+
+
+         }
+      }
+   }
+
+   &-ip {
+      .wpcf7-form-control-wrap {
+         width: 100%;
+      }
+
+      .ic-down {
+         position: absolute;
+         top: 50%;
+         transform: translate(0, -50%) rotate(0);
+         right: 0;
+         width: 2rem;
+         height: 2rem;
+         pointer-events: none;
+         @include flex;
+         transition: all .3s ease;
+
+         &.active {
+            transform: translate(0, -50%) rotate(180deg);
+         }
+
+         img {
+            width: 100%;
+            display: block;
+            object-fit: contain;
+         }
+      }
+
+      textarea {}
+   }
+
+   &-input {
+      flex: 1;
+      height: 5.4rem;
+      outline: none;
+      width: 100%;
+      display: block;
+      padding: 1.2rem 1.6rem;
+      font-size: 1.4rem;
+      font-family: var(--font-sec);
+      color: $color-text;
+      background-color: $color-white;
+      font-weight: 400;
+      transition: all .3s ease;
+      // border: none;
+      overflow: hidden;
+      border: .1rem solid $color-border;
+      border-radius: 4rem !important;
+
+      @include max(800px) {
+         padding: 1.2rem;
+         height: 4.8rem;
+      }
+
+      &:not(:placeholder-shown),
+      &:focus {
+         border-color: $color-pri;
+      }
+
+      @include max(800px) {
+         font-size: 1.4rem;
+      }
+
+      .dateTime {
+         position: relative;
+
+         input {
+            display: none;
+            pointer-events: none;
+         }
+
+         .dateTimeText {
+            color: $color-border;
+            font-size: 1.6rem;
+            font-weight: normal;
+
+            @include max(800px) {
+               font-size: 1.4rem;
+            }
+
+            &.disable {
+               color: $color-text;
+               font-weight: 500;
+            }
+         }
+
+         .icon {
+            width: 2.4rem;
+            height: 2.4rem;
+            @include mid-flex;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            cursor: pointer;
+
+            img {
+               width: 100%;
+               height: 100%;
+               object-fit: contain;
+               display: block;
+            }
+         }
+      }
+   }
+
+   &-lb {
+      color: $color-bg;
+      font-weight: 400;
+      font-family: var(--font-pri);
+      z-index: 1;
+      @include fz-16;
+      pointer-events: none;
+      transition: all .3s ease;
+      width: 100%;
+
+
+      &.speci {
+         &::after {
+            content: '*';
+            color: red;
+         }
+      }
+   }
+
+   &-file {
+      position: relative;
+      max-width: 30.2rem;
+
+      label {
+         cursor: pointer;
+         @include flex;
+         align-items: center;
+         gap: .8rem;
+         width: 100%;
+         border-radius: .8rem;
+         padding: 1.2rem;
+         background-color: $color-white;
+         border: .1rem dashed $color-pri;
+         @include fz-16;
+         color: $color-text;
+         font-weight: 500;
+
+         .txt {
+            max-width: 100%;
+            @include lc(1);
+         }
+
+      }
+
+      .icon {
+         width: 1.6rem;
+         height: 1.6rem;
+         @include mid-flex;
+         flex-shrink: 0;
+
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+         }
+      }
+
+      input {
+         display: none;
+      }
+
+      .inner {
+         display: flex;
+         gap: 1rem;
+         align-items: center;
+
+         .wpcf7-form-control-wrap {
+            display: none !important;
+         }
+      }
+   }
+
+   &-accept {
+
+      // input:checked + .form-lb::before{
+      //     background-color: $color-pri;
+      //   }
+      .form-lb {
+         position: relative;
+         color: $color-text;
+         font-weight: 400;
+         @include fz-16;
+         font-family: var(--font-pri);
+         cursor: pointer;
+
+         a {
+            color: $color-pri;
+            text-decoration: underline;
+         }
+
+         &.active {
+            &::after {
+               border-color: $color-pri;
+            }
+         }
+
+         &::before {
+            content: '';
+            -webkit-appearance: none;
+            background-color: $color-border;
+            border: .2rem solid $color-border;
+            border-radius: .2rem;
+            box-shadow: 0 .1reem .2rem rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+            padding: .8rem;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            cursor: pointer;
+            margin-right: .5rem;
+            margin-top: -.2rem;
+            transition: all .3s ease;
+         }
+
+         &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: .4rem;
+            left: .7rem;
+            width: .5rem;
+            height: 1rem;
+            border: solid $color-white;
+            border-width: 0 .2rem .2rem 0;
+            transform: rotate(45deg);
+            opacity: 1;
+         }
+      }
+   }
+
+   &-search {
+      padding: .4rem;
+      border: .1rem solid $color-pri;
+      border-radius: 10rem;
+      @include flex;
+      gap: .4rem;
+      background-color: $color-white;
+      overflow: hidden;
+      min-height: 5.1rem;
+
+      input {
+         width: 100%;
+         @include fz-16;
+         font-family: var(--font-pri);
+         color: $color-text;
+         font-weight: 500;
+         padding: 1rem 2rem;
+         border: none;
+         outline: none;
+      }
+
+      .btn-search {
+         flex-shrink: 0;
+         font-family: var(--font-pri);
+         color: $color-white;
+         font-weight: 500;
+         @include mid-flex;
+         border-radius: $radius-9;
+         background-color: $color-pri;
+         width: 4.4rem;
+         height: 4.4rem;
+         transition: all .3s ease-in-out;
+
+         img {
+            width: 80%;
+            height: 80%;
+            display: block;
+            object-fit: contain;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7470%) hue-rotate(311deg) brightness(100%) contrast(100%);
+
+         }
+
+         &:hover {
+            filter: grayscale(.3);
+         }
+      }
+   }
+}

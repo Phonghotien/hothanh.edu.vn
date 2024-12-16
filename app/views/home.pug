@@ -1,0 +1,591 @@
+extends layout/layout
+block vars
+   -title = 'home'
+   -mainClass = 'page-home'
+   -bodyClass = 'home'
+   -hdClass = ''
+   -jsLibs = [JsJquery, JsAos, JsSplitting, JsGsap, JsScrollTrigger,JsSwiper,JsSelect2,JsSplide,JsSplidesSroll,JsFancybox]
+   -jsComponents = ['search','btnToTop','header', 'mobile','animated','textAni','scrollTrigger','swiper','select2','form','splide','addclass','countUp','popup','fancybox','hoverParallax']
+   -cssLibs = [Cssfontawesomeall, Cssfontawesome, CssAos,CssSplitting,CssSelect2,CssSwiper,CssSplide,CssFancybox]
+   -cssComponents = ['animation','ani','banner','swiper','select2','form','box','block','popup','card']
+   -cssPages = ['home','news']
+
+block container
+   section.sec-hbanner.parallaxDecJS
+      .hbanner.add-class
+         .hbanner-wr
+            .container
+               .hbanner-bdy 
+                  .hbanner-slider
+                     .hbanner-row.row 
+                        .hbanner-col.col.col-5
+                           .hbanner-frm 
+                              form(action="" method="method")
+                                 .hbanner-frm-inner 
+                                    .hbanner-des 
+                                       +ttp("Hệ thống giáo dục Luyện thi <span>Hồ Thành</span>",
+                                          "",
+                                          "t-ctext ttdecor f-six tshadow txt-spl",
+                                          "Hệ thống giáo dục Luyện thi Hồ Thành",
+                                          " Khơi nguồn động lực, kiến tạo tương lai",
+                                          "",
+                                          "decor.png",
+                                          "",
+                                          false)
+                                    .hbanner-filter
+                                       .hbanner-input
+                                          input(type="text" placeholder="Tìm kiếm khoá học...")
+                                       .hbanner-select 
+                                          select.re-select-main(data-placeholder="Danh mục")
+                                             option(value="")
+                                             option(value="demo")
+                                                | Danh mục 1111
+                                             option(value="demo")
+                                                | Danh mục 111
+                                             option(value="demo")
+                                                | Danh mục 111
+                                       .hbanner-search 
+                                          +btn("Tìm kiếm","btn-pri btn-rev btn-main","","search.png","button","")
+                                    .hbanner-block
+                                       .hbanner-list.row
+                                             .hbanner-item.col.col-3 
+                                                .inner 
+                                                      .icon 
+                                                         +img("hcourse-icon-1.png")
+                                                      p.txt Luyện thi Đại học
+                                             .hbanner-item.col.col-3 
+                                                .inner 
+                                                   .icon 
+                                                      +img("hcourse-icon-5.png")
+                                                   p.txt Luyện thi ĐGNL
+                                             .hbanner-item.col.col-3 
+                                                .inner 
+                                                   .icon 
+                                                      +img("hcourse-icon-3.png")
+                                                   p.txt Luyện thi IELTS, TOEIC
+                                             .hbanner-item.col.col-3 
+                                                .inner 
+                                                   .icon 
+                                                      +img("hcourse-icon-4.png")
+                                                   p.txt Học Online, Offline
+                                    .hbanner-btn 
+                                       +btn("Các khóa học","btn-pri btn-main","","btn-icon-1.png","","")
+
+                        .hbanner-col.col.col-7 
+                           .hbanner-swiper 
+                              .gldecor.hat.add-class
+                                 .hat-in 
+                                    +img("hat.png")
+                                          
+                              .swiper 
+                                 .swiper-wrapper 
+                                    .swiper-slide 
+                                       .hbanner-inner
+                                          .hbanner-img
+                                             .hbanner-gr 
+                                                .hbanner-box.decJS(style="") 
+                                                   .inner 
+                                                      .icon
+                                                         +img("hbanner-icon-1.png")
+                                                      .des 
+                                                         p.tt 10.000 +
+                                                         p.txt HS đậu đại học
+                                                .hbanner-box.decJS(style="") 
+                                                   .inner 
+                                                      .icon
+                                                         +img("hbanner-icon-3.png")
+                                                      .des 
+                                                         p.tt 35+ giáo viên
+                                                         p.txt Chuyên môn cao
+                                                .hbanner-box.decJS(style="") 
+                                                   .inner 
+                                                      .icon
+                                                         +img("hbanner-icon-2.png")
+                                                      .des 
+                                                         p.tt 1000+
+                                                         p.txt Đạt điểm mơ ước
+                                                .hbanner-box.decJS(style="") 
+                                                   .inner 
+                                                      .icon
+                                                         +img("hbanner-icon-3.png")
+                                                      .des 
+                                                         p.tt 10+ thủ khoa
+                                                         p.txt Thủ khoa kì thi THPT QG
+
+                                             .hbanner-decor 
+                                                .cir
+                                                .cir
+                                             .hbanner-img-inner 
+                                                +img("hbanner-img.png")
+                                    .swiper-slide 
+                                       .hbanner-inner
+                                          .hbanner-img
+                                             .hbanner-gr 
+                                                .hbanner-box.decJS(style="") 
+                                                   .inner 
+                                                      .icon
+                                                         +img("hbanner-icon-1.png")
+                                                      .des 
+                                                         p.tt 10.000 +
+                                                         p.txt HS đậu đại học
+                                                .hbanner-box.decJS(style="") 
+                                                   .inner 
+                                                      .icon
+                                                         +img("hbanner-icon-3.png")
+                                                      .des 
+                                                         p.tt 35+ giáo viên
+                                                         p.txt Chuyên môn cao
+                                                .hbanner-box.decJS(style="") 
+                                                   .inner 
+                                                      .icon
+                                                         +img("hbanner-icon-2.png")
+                                                      .des 
+                                                         p.tt 1000+
+                                                         p.txt Đạt điểm mơ ước
+                                                .hbanner-box.decJS(style="") 
+                                                   .inner 
+                                                      .icon
+                                                         +img("hbanner-icon-3.png")
+                                                      .des 
+                                                         p.tt 10+ thủ khoa
+                                                         p.txt Thủ khoa kì thi THPT QG
+
+                                             .hbanner-decor 
+                                                .cir
+                                                .cir
+                                             .hbanner-img-inner 
+                                                +img("hbanner-img-1.png")
+                              
+                     .swiper-pagination
+
+   section.sec-hinfo   
+      .hinfo
+         .gldecor.recipe.add-class
+            .recipe-in 
+               +img("recipe.png")
+         .gldecor.recipe.recipe-1.add-class
+            .recipe-in 
+               +img("recipe-1.png")
+         .gldecor.axis.add-class
+            .axis-in 
+               +img("axis.png")
+         .gldecor.math.add-class
+            .math-in 
+               +img("math.png")
+         .gldecor.circle.add-class
+            .circle-in 
+               +img("circle.png")
+         .gldecor.smile.add-class
+            .smile-in 
+               +img("smile.png")
+         .gldecor.vector.add-class
+            .vector-in 
+               +img("vector.png")
+         .container 
+            .hinfo-wr 
+               +ttp("CHọn <span>HỒ Thành</span> cùng đồng hành",
+                  "ttcenter mb-80",
+                  "t-ctext ttdecor f-pri tshadow t-upper t-center txt-spl",
+                  "CHọn HỒ Thành cùng đồng hành",
+                  "Tại Hồ Thành, chúng tôi cung cấp môi trường học tập chuyên nghiệp, thân thiện và đầy đam mê. ",
+                  "cup.png",
+                  "decor.png",
+                  "",
+                  false)
+                  .hinfo-bdy 
+                     .hinfo-row.row 
+                        .hinfo-col.col.col-4 
+                           .hinfo-img
+                              .inner 
+                                 +img("human.png")
+                        .hinfo-col.col.col-8
+                           .hinfo-inner 
+                              .hinfo-list.row 
+                                 .hinfo-item.col.col-6 
+                                    .hinfo-box.add-class  
+                                       .icon 
+                                          +img("hinfo-icon-1.png")
+                                       .des 
+                                          h3.tt Tiên phong
+                                          p.txt Các khóa học được tổ chức với chi phí hợp lí, vừa sức với mức thu nhập của nhiều gia đình. Ngoài ra, tổ chức rất nhiều buổi kèm, phụ đạo miễn phí, kênh hỏi bài và tư vấn học tập cho học viên.
+                                 .hinfo-item.col.col-6 
+                                    .hinfo-box.add-class  
+                                       .icon 
+                                          +img("hinfo-icon-2.png")
+                                       .des 
+                                          h3.tt Cống hiên
+                                          p.txt Các khóa học được tổ chức với chi phí hợp lí, vừa sức với mức thu nhập của nhiều gia đình. Ngoài ra, tổ chức rất nhiều buổi kèm, phụ đạo miễn phí, kênh hỏi bài và tư vấn học tập cho học viên.
+                                 .hinfo-item.col.col-6 
+                                    .hinfo-box.add-class  
+                                       .icon 
+                                          +img("hinfo-icon-3.png")
+                                       .des 
+                                          h3.tt Tận tâm
+                                          p.txt Các khóa học được tổ chức với chi phí hợp lí, vừa sức với mức thu nhập của nhiều gia đình. Ngoài ra, tổ chức rất nhiều buổi kèm, phụ đạo miễn phí, kênh hỏi bài và tư vấn học tập cho học viên.
+                                 .hinfo-item.col.col-6 
+                                    .hinfo-box.add-class  
+                                       .icon 
+                                          +img("hinfo-icon-4.png")
+                                       .des 
+                                          h3.tt Đẳng cấp
+                                          p.txt Các khóa học được tổ chức với chi phí hợp lí, vừa sức với mức thu nhập của nhiều gia đình. Ngoài ra, tổ chức rất nhiều buổi kèm, phụ đạo miễn phí, kênh hỏi bài và tư vấn học tập cho học viên.
+                           
+   section.sec-hpartner
+      .hpartner.pd-60
+         .hpartner-wr 
+            .hpartner-bdy
+               .hpartner-slider
+                  .splide.row
+                     .splide__track
+                        .splide__list
+                           each val, index in Array(5)
+                              .splide__slide.col
+                                 .hpartner-item 
+                                    .inner 
+                                       +img(`partner-${index + 1}.png`)
+                                    
+   section.sec-hcourse
+      .hcourse.pd-120
+         .gldecor.hat.add-class
+            .hat-in 
+               +img("hat.png")
+         .gldecor.book.add-class
+            .book-in 
+               +img("book-sec.png")
+
+         .container 
+            .hcourse-wr.mb-100
+               .hcourse-head.mb-48
+                  +ttp("Các <span>Khóa Học</span> Của Trung Tâm",
+                        "ttcenter",
+                        "t-ctext ttdecor f-pri tshadow t-upper t-center txt-spl",
+                        "Các Khóa Học Của Trung Tâm",
+                        "Khơi nguồn động lực, kiến tạo tương lai",
+                        "cup.png",
+                        "decor.png",
+                        "",
+                        false)
+               .hcourse-bdy 
+                  .hcourse-thumb-slider
+                     .swiper.row 
+                        .swiper-wrapper
+                           each val,index in Array(3)
+                              .swiper-slide.col.col-3(data-aos="zoom-in")
+                                    .card
+                                       .card-inner
+                                          .icon 
+                                             +img(`hcourse-icon-${index + 1}.png`) 
+                                          p.txt Luyện thi Đại học
+                              .swiper-slide.col.col-3(data-aos="zoom-in")
+                                 .card
+                                    .card-inner
+                                       .icon 
+                                          +img("hcourse-icon-3.png") 
+                                       p.txt Luyện thi Đại học
+
+                  .hcourse-slider(data-aos="fade-up")
+                     .swiper.row 
+                        .swiper-wrapper
+                           each val in Array(4)
+                              .swiper-slide.col
+                                 .hcourse-inner 
+                                    .hcourse-row.row 
+                                       .hcourse-col.col.col-6 
+                                          .hcourse-des 
+                                             .hcourse-des-inner 
+                                                .head 
+                                                   h3.tt Luyện thi ĐGNL
+                                                   p.txt Phương pháp hiệu quả, tối ưu thời gian
+                                                   .list 
+                                                      .item
+                                                         +img("icon-1.png")
+                                                         p.txt Lộ trình: 06 tháng
+                                                      .item
+                                                         +img("icon-2.png")
+                                                         p.txt Online, Offline
+                                                .mona-content 
+                                                   h3 Mục tiêu hướng đến
+                                                   ul 
+                                                      li Bồi Dưỡng Văn Hóa THCS - THPT
+                                                      li Bồi Dưỡng Văn Hóa THCS - THPT
+                                                      li Bồi Dưỡng Văn Hóa THCS - THPT
+                                                      li Bồi Dưỡng Văn Hóa THCS - THPT
+                                                      li Bồi Dưỡng Văn Hóa THCS - THPT
+
+                                             +btn("Thi thử ngay","btn-pri btn-main","","btn-icon-1.png","","")
+                                       .hcourse-col.col.col-6 
+                                          .hcourse-img 
+                                             .inner
+                                                +img("hcourse-img.jpg")
+                     .swiper-pagination                      
+
+   section.sec-hintro 
+      .hintro
+         .hintro-wr 
+            .hintro-bg 
+               +img("footer-bg.png")
+            .container 
+               .hintro-bdy
+                  .hintro-inner.counter-js 
+                     .hintro-row.row 
+                        each val,index in Array(4)
+                           .hintro-col.col.col-6 
+                              .hintro-item 
+                                 .numbber.countNum(data-count="20000") 0
+                                 p.txt Học viên đậu đại học
+
+                  .hintro-img
+                     .inner 
+                        +img("group-1.png")
+                            
+   section.sec-hmember 
+      .hmember.pd-120 
+         .gldecor.recipe.add-class
+            .recipe-in 
+               +img("recipe.png")
+         .gldecor.recipe.recipe-1.add-class
+            .recipe-in 
+               +img("recipe-1.png")
+         .gldecor.axis.add-class
+            .axis-in 
+               +img("axis.png")
+         .gldecor.math.add-class
+            .math-in 
+               +img("math.png")
+         .gldecor.circle.add-class
+            .circle-in 
+               +img("circle.png")
+         .gldecor.smile.add-class
+            .smile-in 
+               +img("smile.png")
+         .gldecor.vector.add-class
+            .vector-in 
+               +img("vector.png")
+         .hmember-wr 
+            .container
+               .hmember-head
+                  +ttp("Đội ngũ giảng viên <span>tâm huyết</span>",
+                           "ttcenter mb-60",
+                           "t-ctext ttdecor f-pri tshadow t-upper mb-12 t-center txt-spl",
+                           "Đội ngũ giảng viên tâm huyết",
+                           "Khơi nguồn động lực, kiến tạo tương lai",
+                           "cup.png",
+                           "decor.png",
+                           "",
+                           false)
+               .hmember-slider(data-aos="zoom-in")
+                  .swiper.row 
+                     .swiper-wrapper
+                        each val,index in Array(5)
+                           .swiper-slide.col.col-3 
+                              .teacher
+                                 a.teacher-link(href="") 
+                                 .teacher-inner 
+                                    .box 
+                                       .box-inner 
+                                          .box-img
+                                             +img("teacher-1.png")
+                                          .box-decor 
+                                             +img("box-decor.png")
+                                    .teacher-des 
+                                       .teacher-des-inner 
+                                          h4.teacher-tt Nguyễn Thị Thủy Tiên
+                                          .icon 
+                                             +img("tick.png") 
+                                       p.txt Thủ khoa sư phạm Toán
+                                          br 
+                                          | Hơn 7 năm kinh nghiệm giảng dạy
+                  .swiper-gr
+                     .swiper-prev
+                        i.fa-solid.fa-chevron-left
+                     .swiper-next
+                        i.fa-solid.fa-chevron-right
+                     .swiper-pagination 
+                                       
+                        
+            .hmember-bdy 
+               .container
+                  +ttp("Học Viên Nghĩ Gì Về <span> Hồ Thành</span>",
+                           "ttcenter mb-60",
+                           "t-ctext ttdecor f-pri tshadow t-upper mb-12 t-center txt-spl",
+                           "Học Viên Nghĩ Gì Về Hồ Thành",
+                           "Khơi nguồn động lực, kiến tạo tương lai",
+                           "cup.png",
+                           "decor.png",
+                           "",
+                           false)
+                  .student-slider(data-aos="zoom-in")
+                     .swiper.row 
+                        .swiper-wrapper
+                           each val,index in Array(5)
+                              .swiper-slide.col
+                                 .block 
+                                    .block-inner 
+                                       .block-img 
+                                          .block-img-inner 
+                                             +img("student.png")
+                                          .block-icon 
+                                             +img("logo-icon.png")
+                                       .block-des 
+                                          .block-des-inner 
+                                             .block-head
+                                                .block-award
+                                                   .icon 
+                                                      +img("award.png")
+                                                   p.point 28,00 Điểm
+                                                h4.block-tt Kỳ thi THPT Quốc gia
+                                             
+                                             .block-content 
+                                                p.txt Khi theo học khoá IELTS Advance tại Trung tâm thì em nhận thấy rõ sự tiến bộ của minh về 2 kỹ năng Writing và Speaking.
+                                             .block-info 
+                                                p.block-name Nguyễn An Bình
+                                                p.txt Học viên IELTS ADVANCED
+                     
+                     .swiper-gr
+                        .swiper-prev
+                           i.fa-solid.fa-chevron-left
+                        .swiper-next
+                           i.fa-solid.fa-chevron-right
+                        .swiper-pagination 
+
+   section.sec-hadvise 
+      .hadvise.pd-160 
+         .hadvise-bg 
+            +img("hadvise.jpg")
+         .container
+            .hadvise-wr 
+               .hadvise-bdy
+                  .gldecor.spring.add-class
+                     .spring-in 
+                        +img("spring.png")
+                  .hadvise-row
+                     .hadvise-col(data-aos="fade-right" data-aos-duration="1400")
+                        form(action="" method="method")
+                           .hadvise-frm
+                              .hadvise-frm-head
+                                 +ttp("Đăng ký nhận <span>tư vấn</span>",
+                                    "",
+                                    "t-ctext ttdecor f-pri tshadow t-upper txt-spl",
+                                    "Đăng ký nhận tư vấn",
+                                    "Quý Phụ huynh Học sinh vui lòng để lại thông tin bên dưới để nhận tư vấn về các khoá học",
+                                    "",
+                                    "decor.png",
+                                    "",
+                                    false)
+                                 .hadvise-contact.bg-sec
+                                    p.txt Hotline: 
+                                       span 0938 171 119
+
+                              .hadvise-frm-inner
+                                 .form-row.row 
+                                    .form-col.col
+                                       .form-item 
+                                          .form-ip
+                                             input.form-input(type="text" placeholder="Nhập họ và tên của bạn")
+                                    .form-col.col
+                                       .form-item 
+                                          .form-ip
+                                             input.form-input(type="tel" placeholder="Nhập SĐT của bạn")
+                                    .form-col.col
+                                       .form-item
+                                          .form-ip
+                                             select.re-select-main(data-placeholder="Khóa học bạn quan tâm")
+                                                option(value="")
+                                                option(value="demo")
+                                                   | Khóa học bạn quan tâm
+                                                option(value="demo")
+                                                   | Khóa học bạn quan tâm
+                                                option(value="demo")
+                                                   | Khóa học bạn quan tâm
+                                    .form-col.col
+                                       .form-item 
+                                          .form-ip
+                                             input.form-input(type="email" placeholder="Nhập email của bạn")
+                                 
+                                 +btn("Gửi thông tin","btn-pri t-upper wfull btn-main btn-rev","","btn-icon-1.png","button","")
+
+                     .hadvise-col
+                        .hadvise-inner
+                           .gldecor.book.add-class
+                              .book-in 
+                                 +img("book.png")
+                           .gldecor.cup.add-class
+                              .cup-in 
+                                 +img("cup.png")
+                           .hadvise-des
+                              .hadvise-des-inner
+                                 +ttp("<span>Chinh phục các kỳ thi Với đề thi thực chiến</span>",
+                                    "",
+                                    "t-ctext ttdecor f-pri tshadow t-upper txt-spl",
+                                    "Chinh phục các kỳ thi Với đề thi thực chiến",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    false)
+                                 .hadvise-content 
+                                    .mona-content 
+                                       ul 
+                                          li Bồi Dưỡng Văn Hóa THCS - THPT
+                                          li Luyện Thi ĐGNL
+                                          li Luyện Thi IELTS
+                                          li Học online kết hợp offline 
+                                          li Phương pháp làm bài hiệu quả
+                                 .hadvise-intro.bg-pri
+                                    p.txt Miễn phí các buổi làm bài Thi thủ tại trung tâm
+                                 .hadvise-img.add-class 
+                                    .inner 
+                                       +img("girl-1.png")
+
+   section.sec-hnews 
+      .hnews.pd-120.mb-40 
+         .gldecor.hat.add-class
+            .hat-in 
+               +img("hat.png")
+         .container 
+            .hnews-wr 
+               .hnews-head.mb-60
+                  +ttp("Có thể bạn <span>quan tâm</span>",
+                        "ttcenter",
+                        "t-ctext ttdecor f-pri tshadow t-upper t-center txt-spl",
+                        "Có thể bạn quan tâm",
+                        "",
+                        "cup.png",
+                        "decor.png",
+                        "",
+                        false)
+               .hnews-bdy 
+                  .hnews-row.row
+                     each val,index in Array(5)
+                        .hnews-col.col(data-aos="fade-up" data-aos-duration="1800")
+                           .newsit 
+                              a.newsit-link(href="") 
+                              .newsit-in 
+                                 .newsit-img 
+                                    .in
+                                       +img(`news-${index + 1}.jpg`)
+                                 .newsit-des 
+                                    .newsit-tag 
+                                       p.tag 12/12/2024
+                                    .newsit-des-in 
+                                       h3.newsit-tt 
+                                          | Khóa luyện thi THPT Quốc gia Online tại Trung tâm
+                                       p.newsit-txt Với kinh nghiệm nhiều năm ôn tập và đồng hành cùng các bạn sinh viên vượt qua bài thi Tiếng Anh Đầu Vào cùng số điểm cao, Agena tặng các bạn sắp thi dạng Nói – Viết cuốn Ebook.
+                                       .newsit-btn(href="") Xem thêm 
+
+   section.sec-hgallery 
+      .hgallery
+         .hgallery-wr 
+            .hgallery-bdy
+               +hgallerySlider(2, 6)
+                  //- .hgallery-slider
+                  //-     each val in Array(2)
+                  //-         .splide.row
+                  //-             .splide__track
+                  //-                 .splide__list
+                  //-                     each val, index in Array(6)
+                  //-                         .splide__slide.col.col-4
+                  //-                             .hgallery-item
+                  //-                                 .hgallery-img(data-fancybox="gallery" data-src=`./assets/images/gallery-${index + 1}.jpg`)
+                  //-                                     .hgallery-img-inner
+                  //-                                         +img(`gallery-${index + 1}.jpg`)

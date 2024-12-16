@@ -1,0 +1,128 @@
+@import "../core";
+
+.pagi-pri {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+
+   .pagination {
+      width: 100%;
+   }
+
+}
+
+.page-numbers {
+   @include flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   z-index: 5;
+
+   >li {
+      &:not(:first-child) {
+         margin-left: .2rem;
+      }
+
+      &>.page-numbers {
+         --wh: 4rem;
+         width: var(--wh);
+         height: var(--wh);
+         @include mid-flex;
+         background-color: transparent;
+         cursor: pointer;
+         position: relative;
+         overflow: hidden;
+         border-radius: .8rem;
+         color: $color-text;
+         @include fz-14;
+         font-family: var(--font-thr);
+         font-weight: 500;
+         transition: all 0.4s ease;
+         @include affter($color-bg);
+
+         &:after {
+            z-index: -1;
+         }
+
+         @include max(1200px) {
+            --wh: 3.6rem;
+         }
+
+         &:hover {
+
+            &:not(.dot) {
+               // border: 0.5px solid $color-text;
+               color: $color-pri;
+
+               &::after {
+                  left: 0;
+                  width: 100%;
+               }
+            }
+         }
+
+         &.current {
+            // border: 0.5px solid  $color-text;
+            color: $color-pri;
+
+            &::after {
+               left: 0;
+               width: 100%;
+            }
+         }
+
+         &.dot {
+            background-color: transparent;
+            border: transparent !important;
+         }
+
+         &.next {
+            margin-left: 1.2rem;
+
+            @include min(801px) {}
+         }
+
+         &.prev {
+            margin-right: 1.2rem;
+
+            @include min(801px) {}
+         }
+
+         &.next,
+         &.prev {
+            border: none;
+            @include mid-flex;
+            position: relative;
+            border-radius: none;
+            color: $color-text;
+            font-size: 1.4rem;
+            font-weight: 500;
+            font-family: var(--font-thr);
+
+            text-transform: capitalize;
+
+            @include min(601px) {
+               // width: fit-content;
+            }
+
+            &::after {}
+
+            &:hover {
+               color: $color-pri;
+            }
+         }
+
+         .txt {
+            display: none;
+
+            @include max(600px) {}
+         }
+
+         i {
+            // @include min(601px) {
+            //   display: none;
+            // }
+         }
+      }
+   }
+}

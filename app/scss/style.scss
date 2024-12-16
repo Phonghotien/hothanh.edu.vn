@@ -1,0 +1,32 @@
+@import "./core";
+@import "./blocks/social.scss";
+@import "./blocks/flex.scss";
+@import "./blocks/animation.scss";
+
+// Core
+@import "./core/reset";
+@import "./core/mona";
+@import "./core/font";
+@import "./core/base";
+@import "./core/mobile";
+@import "./core/smenu";
+@import "./core/title";
+
+
+// Component
+@import "./components/header";
+@import "./components/footer";
+@import "./components/burger";
+@import "./components/backtotop";
+@import "./components/scroll";
+@import "./components/aos";
+
+// Layout
+@import "./layouts/btn";
+@import "./layouts/distance";
+@import "./layouts/breadcrumb";
+
+// .text {
+//    text-decoration: underline;
+//    text-underline-position: under;
+// }

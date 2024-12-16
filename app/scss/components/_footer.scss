@@ -1,0 +1,266 @@
+@import "../core";
+
+.footer {
+   position: relative;
+   overflow: hidden;
+   background-color: $color-pri;
+   padding-bottom: 4rem;
+
+   @include max(1200px) {
+      padding-bottom: 2rem;
+   }
+
+   &-wr {
+      position: relative;
+      z-index: 1;
+      width: 117.6rem;
+      max-width: 100%;
+      margin: 0 auto;
+   }
+
+   &-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: .4;
+      pointer-events: none;
+
+      img {
+         @include imgcv;
+      }
+   }
+
+   &-bdy {
+      padding: 8rem 0;
+
+      @include max(1200px) {
+         padding: 4rem 0;
+      }
+
+   }
+
+   &-des {
+      max-width: 28rem;
+
+      .txt {
+         color: $color-white;
+         font-weight: 400;
+         font-family: var(--font-sec)
+      }
+   }
+
+   &-inner {
+      @include flex;
+      flex-direction: column;
+      gap: 2.4rem;
+
+      @include max(1200px) {
+         gap: 1.2rem;
+      }
+
+      .menu-list {
+         @include flex;
+         flex-direction: column;
+         gap: 1.6rem;
+
+         @include max(1200px) {
+            gap: .8rem;
+         }
+      }
+
+      .menu-link {
+         display: flex;
+         font-weight: 400;
+         @include fz-16;
+         font-family: var(--font-sec);
+         color: $color-white;
+         transition: all .3s ease;
+
+         @include max(1200px) {
+            font-size: 1.4rem;
+         }
+
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+
+      .social {
+         margin-top: 0;
+
+         .txt {
+            display: none;
+         }
+
+         &-list {
+            gap: 2rem;
+
+            @include max(1200px) {
+               gap: 1rem;
+            }
+         }
+
+         &-link {
+            width: 2.4rem;
+            height: 2.4rem;
+         }
+      }
+   }
+
+   &-tt {
+      color: $color-white;
+      @include fz-20;
+      font-weight: 500;
+      line-height: 140%;
+
+   }
+
+   &-list {
+      @include flex;
+      flex-direction: column;
+      gap: .8rem;
+   }
+
+
+   &-logo {
+      width: 24.9rem;
+      max-width: 100%;
+      flex-shrink: 0;
+
+      @include max(768px) {
+         width: 17rem;
+      }
+
+      @include max(450px) {
+         margin: 0 auto;
+      }
+
+      &-inner {
+         display: flex;
+
+         img {
+            width: 100%;
+            display: block;
+            object-fit: contain;
+         }
+      }
+   }
+
+   &-item {
+      @include flex;
+      align-items: center;
+      gap: .8rem;
+      width: auto;
+
+      .icon {
+         width: 2.8rem;
+         height: 2.8rem;
+         flex-shrink: 0;
+         @include mid-flex;
+
+         @include max(1200px) {
+            width: 2.4rem;
+            height: 2.4rem;
+         }
+
+         img {
+            @include imgct;
+            transition: all .3s ease;
+
+         }
+      }
+
+      .txt {
+         color: $color-white;
+         font-weight: normal;
+         @include fz-16;
+         font-weight: 300;
+         transition: all .3s ease;
+         font-family: var(--font-four);
+
+         @include max(1200px) {
+            font-size: 1.4rem;
+         }
+      }
+
+      &:hover {
+
+         // .icon{
+         //     img{
+         //         filter: $filter-1;
+         //     }
+         // }
+         .txt {
+            text-decoration: underline;
+            color: $color-white;
+         }
+      }
+   }
+
+
+   &-row {
+      justify-content: space-between;
+
+      @include max(1000px) {
+         --col-gap: 2rem;
+         --row-gap: 2rem;
+      }
+   }
+
+   &-col {
+
+
+      &:nth-child(1) {
+         @include max(900px) {
+            order: 1;
+            width: 60%;
+         }
+      }
+
+      &:nth-child(2) {
+         @include max(900px) {
+            order: 3;
+            width: 100%;
+         }
+      }
+
+      &:nth-child(3) {
+         @include max(900px) {
+            order: 2;
+            width: 40%;
+         }
+      }
+
+      @include max(450px) {
+         width: 100% !important;
+      }
+   }
+
+   &-author {
+
+      // padding: 1.6rem 0;
+      &-in {
+         @include flex;
+         align-items: center;
+         justify-content: center;
+         flex-wrap: wrap;
+         gap: .5rem;
+
+         .txt {
+            color: $color-white;
+            @include fz-16;
+            font-weight: 500;
+            font-family: var(--font-four);
+         }
+
+         .item {
+            width: 18rem;
+            height: 2.4rem;
+
+            img {
+               @include imgct;
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,45 @@
+@import "../core";
+
+.social {
+   @include flex;
+   align-items: center;
+   gap: 1.2rem;
+   margin-top: 2rem;
+
+   &-list {
+      @include flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+   }
+
+   &-item {
+      position: relative;
+      @include mid-flex;
+
+      &:hover {
+         .social-link {
+            transform: translateY(-5px);
+         }
+      }
+
+      i {
+         @include fz-16;
+      }
+
+      img {
+         display: block;
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+   }
+
+   &-link {
+      @include mid-flex;
+      width: 3.2rem;
+      height: 3.2rem;
+      transition: all .3s ease;
+      border-radius: 100%;
+   }
+}

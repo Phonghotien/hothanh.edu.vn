@@ -1,0 +1,98 @@
+header.header(data-lenis-prevent)
+   .header-wrap
+      .header-flex
+         .container
+            .header-flex-in
+               .header-logo
+                  a.header-logo-link(href='')
+                     +img('logo.png')
+               .header-nav
+                  .menu-nav
+                     ul.menu-list
+                        +menuItem('Giới thiệu', '', true)
+                        +menuItem('Luyện thi đại học', '', false, true)
+                           +menuItem('Luyện thi đại học', '', false, true)
+                              +menuItem('Luyện thi đại học', '', true)
+                              +menuItem('Luyện thi đại học', '')
+                              +menuItem('Luyện thi đại học', '')
+                              +menuItem('Luyện thi đại học', '')
+                              +menuItem('Luyện thi đại học', '')
+                              +menuItem('Luyện thi đại học', '')
+                        +menuItem('Luyện thi ĐGNL', '')
+                        +menuItem('Khóa IELTS', '')
+                        +menuItem('Khóa TOEIC', '')
+                        +menuItem('Tin tức', '')
+                        +menuItem('Liên hệ', '')
+               .header-action
+                  //- .header-search.searchMain(title="Search")
+                  //-   .header-search-icon.searchIconJs 
+                  //-     +img("search.png")
+                  //-   .header-search-overlay.searchOverlayJs
+                  //-   .header-search-bar.searchBarJs
+                  //-     .header-search-close.searchCloseJs
+                  //-       i.fa-regular.fa-xmark
+                  //-     .header-search-in
+                  //-       .header-search-top 
+                  //-         .header-search-logo
+                  //-           +img("logo.png")
+                  //-         h3.tt Nhập thông tin cần tìm kiếm 
+                  //-       .header-search-bar-input 
+                  //-         input.input.searchjs(type="text" placeholder="Tìm kiếm")
+                  //-         a.link(href="")
+                  //-           +img("search.png")
+                  +btn("Đăng nhập","btn-tran t-upper btn-main","","btn-icon-2.png","","")
+                  +btn("Thi thử ngay","btn-pri btn-test t-upper btn-main popup-open","","btn-icon-1.png","button","popupRes")
+                  .menu-icon
+                     #hamburger.hd-burger
+                        .burger
+                           .hamburger
+                              svg.hamburgerSvg(viewBox="0 0 100 100")
+                                 path.line.line-top(d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058")
+                                 path.line.line-mid(d="M 20,50 H 80")
+                                 path.line.line-bot(d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942")
+   .mobile-overlay
+   .mobile
+      .mobile-con
+         .mobile-wr
+            .mobile-nav
+               .menu-nav
+                  ul.menu-list
+                     +menuItem('Giới thiệu', '', true)
+                     +menuItem('Luyện thi đại học', '', false, true)
+                        +menuItem('Luyện thi đại học', '', false, true)
+                           +menuItem('Luyện thi đại học', '', true)
+                           +menuItem('Luyện thi đại học', '')
+                           +menuItem('Luyện thi đại học', '')
+                        +menuItem('Luyện thi đại học', '')
+                        +menuItem('Luyện thi đại học', '')
+                        +menuItem('Luyện thi đại học', '')
+                     +menuItem('Luyện thi ĐGNL', '')
+                     +menuItem('Khóa IELTS', '')
+                     +menuItem('Khóa TOEIC', '')
+                     +menuItem('Tin tức', '')
+                     +menuItem('Liên hệ', '')
+            .mobile-content
+               p.mobile-title
+                  | Thông tin liên hệ
+               .footer-list 
+                  a.footer-item(href="")
+                     .icon 
+                        +img("ct-icon-1.png")
+                     p.txt 618/61/24 Quang Trung, P11, Quận Gò Vấp, TP.HCM
+                  a.footer-item(href="")
+                     .icon 
+                        +img("ct-icon-1.png")
+                     p.txt 3 đường D3,KDC Hiệp Thành City,phường Hiệp Thành, Quận 12, TPHCM
+                  a.footer-item(href="")
+                     .icon 
+                        +img("ct-icon-2.png")
+                     p.txt Hotline: 0938 171 119
+                     
+                  a.footer-item(href="")
+                     .icon 
+                        +img("ct-icon-3.png")
+                     p.txt luyenthihothanh@gmail.com 
+      .mobile-mxh
+         h3.mobile-title
+            | mạng xã hội
+         +social("",[{images: "social-1.png"},{images: "social-2.png"},{images: "social-3.png"},{images: "social-4.png"}],"")

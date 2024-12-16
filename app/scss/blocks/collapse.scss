@@ -1,0 +1,67 @@
+@import "../core";
+
+.collapse {
+   &-item {
+      &.active {
+         .collapse-head {
+            .plus {
+               &:before {
+                  transform: translate(-50%, -50%) rotate(-90deg);
+                  opacity: 0;
+               }
+
+               &:after {
+                  transform: translate(-50%, -50%) rotate(0);
+               }
+            }
+         }
+      }
+   }
+
+   &-head {
+      padding: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: .1rem solid $color-border;
+
+      .txt {
+         font-weight: 700;
+         color: $color-text;
+      }
+
+      .plus {
+         width: 1.6rem;
+         height: 1.6rem;
+         position: relative;
+         border-radius: 100%;
+         border: .1rem solid $color-text;
+         cursor: pointer;
+
+         &:before,
+         &:after {
+            content: "";
+            display: block;
+            background-color: $color-text;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transition: .35s;
+            width: .8rem;
+            height: .1rem;
+         }
+
+         &:before {
+            transform: translate(-50%, -50%);
+         }
+
+         &:after {
+            transform: translate(-50%, -50%) rotate(90deg);
+         }
+      }
+   }
+
+   &-body {
+      display: none;
+   }
+}

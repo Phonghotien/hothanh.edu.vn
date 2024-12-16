@@ -1,0 +1,103 @@
+footer.footer
+   .footer-bg 
+      +img("footer-bg.png")
+   .footer-wr 
+      .container 
+         .footer-bdy
+               .footer-row.row
+                  .footer-col.col.col-4
+                     .footer-logo.mb-24
+                           a.footer-logo-inner(href="")
+                              +img("footer-logo.png")
+                     .footer-inner 
+                           .footer-des
+                              p.txt Tại Hồ Thành, chúng tôi cung cấp môi trường học tập chuyên nghiệp, thân thiện và đầy đam mê. 
+                           +social("",[{images: "social-1.png"},{images: "social-2.png"},{images: "social-3.png"},{images: "social-4.png"},{images: "social-5.png"}],"")
+                                    
+                  .footer-col.col.col-5
+                     .footer-inner 
+                           h3.footer-tt Thông tin liên hệ
+                           .footer-list 
+                              a.footer-item(href="")
+                                 .icon 
+                                       +img("ct-icon-1.png")
+                                 p.txt 618/61/24 Quang Trung, P11, Quận Gò Vấp, TP.HCM
+                              a.footer-item(href="")
+                                 .icon 
+                                       +img("ct-icon-1.png")
+                                 p.txt 3 đường D3,KDC Hiệp Thành City,phường Hiệp Thành, Quận 12, TPHCM
+                              a.footer-item(href="")
+                                 .icon 
+                                       +img("ct-icon-2.png")
+                                 p.txt Hotline: 0938 171 119
+                                 
+                              a.footer-item(href="")
+                                 .icon 
+                                       +img("ct-icon-3.png")
+                                 p.txt luyenthihothanh@gmail.com
+
+                  .footer-col.col.col-2 
+                     .footer-inner 
+                           h3.footer-tt Khoá học
+                           .menu-list 
+                              .menu-item 
+                                 a.menu-link(href="")
+                                       | Luyện thi Đại học
+                              .menu-item 
+                                 a.menu-link(href="")
+                                       | Luyện thi ĐGNL
+                              .menu-item 
+                                 a.menu-link(href="")
+                                       | Luyện thi IELTS
+                              .menu-item 
+                                 a.menu-link(href="")
+                                       | Luyện thi TOEIC
+               
+         .footer-author 
+               .footer-author-in 
+                  p.txt Thiết kế bởi
+                  .item 
+                     +img("author.png")   
+
++popup("popupRes",
+      "popupRes",
+      "fa-solid fa-xmark",
+      "",
+      "")
+      .popupRes-bdy 
+         h3.popupRes-tt Bạn muốn thi thử phần nào?
+         .popupRes-inner 
+               .popupRes-row.row 
+                  each val,index in Array(3)
+                     .popupRes-col.col.col-3
+                           .card
+                              .card-inner
+                                 .icon 
+                                       +img(`hcourse-icon-${index + 1}.png`) 
+                                 p.txt Luyện thi Đại học
+                  .popupRes-col.col.col-3
+                     .card
+                           .card-inner
+                              .icon 
+                                 +img("hcourse-icon-3.png") 
+                              p.txt Luyện thi Đại học
+
+.fbtn
+   a.fbtn-icon(href="")
+      .icon 
+         +img("fbtn-1.png")
+      .des
+         p.txt Trắc nghiệm Holland
+   a.fbtn-icon(href="")
+      .icon 
+         +img("fbtn-2.png")
+
+
+.back-to-top.backToTop
+   //- +img("backtotop.png")
+   //- i.fa-solid.fa-chevron-up
+   svg(xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 20 28" fill="none")
+      path.svg-elem-1(d="M10.3828 26.7788L10.3828 1.26028" stroke="#fff" stroke-width="2" stroke-linecap="round")
+      path.svg-elem-2(d="M1.81152 9.63561C4.05642 8.87371 8.91356 6.09275 10.383 1.06418" stroke="#fff" stroke-width="2" stroke-linecap="round")
+      path.svg-elem-3(d="M18.9541 9.63561C16.7092 8.87371 11.8521 6.09276 10.3827 1.06418" stroke="#fff" stroke-width="2" stroke-linecap="round").footer-list 
+                              

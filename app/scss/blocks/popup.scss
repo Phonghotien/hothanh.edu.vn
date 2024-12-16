@@ -1,0 +1,212 @@
+@import "../core";
+
+.popup {
+   position: fixed;
+   @include full;
+   z-index: 100;
+   visibility: hidden;
+   pointer-events: none;
+
+   &.open {
+      visibility: visible;
+      pointer-events: visible;
+
+      .popup-close {
+         opacity: 1;
+         visibility: visible;
+      }
+
+      .popup-overlay {
+         opacity: 1;
+         visibility: visible;
+      }
+
+      .popup-main {
+         opacity: 1;
+         visibility: visible;
+         transform: translate(-50%, -50%) scale(1);
+         @include transition(.3s, ease-in-out, .1s);
+         // @include clip-path(polygon(0 0, 100% 0, 100% 100%, 0% 100%))
+      }
+
+   }
+
+   &-overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: $color-border-07;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      transition: all .3s ease;
+      opacity: 0;
+      visibility: hidden;
+   }
+
+   &-main {
+      @include mid;
+      z-index: 2;
+      width: 60vw;
+      max-width: 95%;
+      transition: all .3s ease;
+      transform: translate(-50%, -50%) scale(0);
+
+      // opacity: 0;
+      // visibility: hidden;
+      // @include clip-path(polygon(0 0, 100% 0, 100% 0, 0 0));
+      @include max(1200px) {
+         width: 70vw;
+      }
+
+      @include max(800px) {
+         width: 90vw;
+      }
+
+      &-wrapper {}
+   }
+
+   &-over {
+      overflow: hidden auto;
+      min-height: 20vh;
+      max-height: 85vh;
+
+      &::-webkit-scrollbar-track {
+         background-color: $color-white;
+      }
+
+      &::-webkit-scrollbar {
+         width: .5rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+         background-image: linear-gradient($color-pri, $color-pri);
+         border-radius: 50px;
+         overflow: hidden;
+      }
+   }
+
+   &-wrapper {
+      width: 100%;
+      min-height: 25vh;
+      position: relative;
+
+   }
+
+   &-close {
+      position: absolute !important;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      @include mid-flex;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 3;
+      color: $color-pri;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 100%;
+      background-color: $color-pri;
+
+      &:hover {
+
+         i,
+         .icon {
+            transform: rotate(360deg);
+         }
+      }
+
+      i {
+         transition: all .3s ease;
+      }
+
+      .icon {
+         transition: all .3s ease;
+         color: $color-white;
+         font-weight: normal;
+         width: 100%;
+         height: 100%;
+         font-size: 1.6rem;
+         @include mid-flex;
+      }
+   }
+}
+
+.popupRes {
+   .popup-main {
+      background-color: $color-white;
+      border-radius: var(--dist24);
+      overflow: hidden;
+      width: 135rem;
+   }
+
+   .popup-overlay {
+      background-color: $color-bg-7;
+   }
+
+   &-bdy {
+      padding: 8rem 14rem;
+
+      @include max(1600px) {
+         padding: 8rem;
+      }
+
+      @include max(1200px) {
+         padding: 6rem 4rem;
+      }
+
+      @include max(768px) {
+         padding: 4rem 1.6rem;
+      }
+
+      .card {
+         padding-bottom: 0;
+
+         &:hover {
+            .txt {
+               color: $color-pri;
+            }
+         }
+
+         &-inner {
+            background: $color-linear-2;
+
+            &::before {
+               background-color: $color-white;
+            }
+
+            .icon {
+               @include max(1200px) {
+                  --wicon: 6rem;
+               }
+
+               @include max(768px) {
+                  --wicon: 4rem;
+               }
+            }
+
+            .txt {
+               @include max(768px) {
+                  font-size: 1.4rem;
+               }
+            }
+         }
+      }
+   }
+
+   &-col {
+      @include max(768px) {
+         width: 50%;
+      }
+   }
+
+   &-tt {
+      @include fz-40;
+      color: $color-text-6;
+      font-weight: 700;
+      text-align: center;
+      text-wrap: pretty;
+      margin-bottom: var(--dist40);
+   }
+}

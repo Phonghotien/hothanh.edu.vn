@@ -1,0 +1,238 @@
+mixin img(name)
+   img(src="./assets/images/" + name, alt="", loading="lazy")
+mixin menuItem(text, href, current=false, dropdown=false)
+   li.menu-item(class=current ? 'current-menu-item' : '', class=dropdown ? 'dropdown' : '')
+      a.menu-link(href=href)= text
+      if dropdown
+         ul.menu-list
+            block
+mixin mobileMxh(links)
+   .mobile-mxh
+      each link in links
+         a.mobile-mxh-link(href="")
+            +img(link.imgSrc)
+                
+mixin btn(name, classbtn, classIcon, img, button, datapop)
+   if button !== "button"
+      a(class=classbtn href="#")
+         span.txt #{name}
+         if classIcon || img
+         .icon
+            if classIcon
+               i(class=classIcon)
+            if img
+               +img(img)
+   else
+      button(type="submit" class=classbtn data-popup=datapop ? datapop : null)
+         span.txt #{name}
+         if classIcon || img
+         .icon
+            if classIcon
+               i(class=classIcon)
+            if img
+               +img(img)
+
+mixin footerList(arr)
+   ul.footer-list(class="menu-list")
+      each arrs, index in arr
+         li.footer-item(class="menu-item" class=index === 0 ? 'current-menu-item' : '')
+            a.footer-link(class="menu-link")(href="") #{arrs.txt}
+
+mixin social(txt, arr,dataaos)
+   .social(data-aos=dataaos)
+      if txt
+         p.txt= txt
+      ul.social-list
+         each arrs in arr
+            li.social-item
+               a.social-link(href="")
+                  +img(arrs.images)
+
+mixin footerSocialItem(img)
+   li.footer-social-item 
+      a.footer-social-link(href="")
+         +img(img) 
+
+mixin itemIp(text, cstype, csplacehd, textarea, col, row)
+   .itemIp
+      label.itemIp-lb(for="")= text
+      if textarea
+         textarea.itemIp-input(name="", cols= col, rows= row) 
+      else
+         input.itemIp-input(type=cstype, placeholder=csplacehd)
+
+mixin brandItem(image)
+   .brand-item.swiper-slide
+      .image
+         +img(image)
+
+mixin newsItem(classCustom, image, tag1, tag2, title, description)
+   .news-item(class= classCustom)
+      .news-img 
+         a(href="").in
+            +img(image)
+      .news-des
+         .news-des-inner 
+            .news-tag
+               if tag1
+                  p.tag
+                        != tag1
+               if tag2
+                  p.tag
+                        != tag2
+            h3.news-tt
+               a.link(href="")= title
+            p.news-txt!= description
+
+
+mixin pagination(pages,classCustom)
+   .pagi-pri(class= classCustom)
+      .pagination
+         .pagination-mona
+               ul.page-numbers
+                  each page in pages
+                     if page.type === 'prev'
+                        li
+                           a.page-numbers.prev(href="")
+                              i.fa-regular.fa-arrow-left
+                     else if page.type === 'current'
+                        li
+                           a.page-numbers.current(href="")= page.number
+                     else if page.type === 'dot'
+                        li
+                           a.page-numbers.dot= '...'
+                     else if page.type === 'next'
+                        li
+                           a.page-numbers.next(href="")
+                              i.fa-regular.fa-arrow-right
+                     else
+                        li
+                           a.page-numbers(href="")= page.number
+
+mixin card(classCustom, tt, txt, tags, img)
+   .card(class=classCustom)
+      .card-in
+         .card-img
+            a.in(href="")
+               +img(img)
+         .card-des
+            .card-des-in
+               h3.card-tt 
+                  a.link(href="")= tt
+               if txt
+                  p.card-txt= txt
+               if tags
+                  .card-tag
+                  each tag in tags
+                     p.tag
+                        != tag  
+
+mixin box(classCustom, tt, txt, tags, img)
+   .box(class=classCustom)
+      .box-in
+         .box-img
+            a.in(href="")
+               +img(img)
+         .box-des
+            .box-des-in
+               if tags
+                  .box-tag
+                     each tag in tags
+                        p.tag
+                           != tag  
+               h3.box-tt 
+                  a.link(href="")= tt
+               if txt
+                  p.box-txt= txt
+
+mixin breadCrumb(arr)
+   .breadcrumb
+      .container
+         .breadcrumb-wrapper 
+            ul.breadcrumb-list
+               li.breadcrumb-item(data-aos="fade-right")
+                  a.breadcrumb-link(href="")
+                  | Trang chủ
+               each arrs in arr
+                  li.breadcrumb-item(data-aos="fade-right")
+                     a.breadcrumb-link(href="") #{arrs.txt}
+
+mixin ttp(text, classtt, classCustom,datatt ,txt, titledecor, decorimg , dataaos, dataspl)
+   .title(class=classtt)
+      if titledecor
+         .title-decor.mb-32
+            +img(titledecor)
+      h2.title-pri(data-tt=datatt, class=classCustom, data-aos=dataaos ? dataaos : undefined, data-spl=dataspl ? '' : undefined)
+         != text
+         if decorimg
+            .decor
+               +img(decorimg)
+      if txt
+         p.txt(data-aos=dataaos ? dataaos : undefined)
+            != txt
+
+//- banner
+mixin banner(text, breadcrumb, img, classCustom, tags)
+   section.sec-banner
+      .banner(class= classCustom)
+         .banner-bg 
+            +img(img)
+         .container 
+            .banner-wr 
+               .banner-bdy 
+                  +ttp(text, "", "t-cpri f-five t-upper t-center", "", "", "", "fade-right", false)
+                  if breadcrumb
+                     +breadCrumb(breadcrumb)
+                  if tags && tags.length
+                     .banner-des
+                        .banner-tag
+                           each tag in tags
+                              .tag
+                                 +img(tag.img)
+                                 p.txt= tag.text
+
+
+mixin footerItem(txt)
+   li.footer-item(class="menu-item")
+      a.footer-link(class="menu-link")(href="")
+         .icon 
+            i.fa(class="fa-angle-right")
+         p.text= txt
+
+
+mixin footerSocialItem(img)
+   li.footer-social-item 
+      a.footer-social-link(href="")
+         +img(img) 
+mixin csinput(csclass, cstype, csplacehd)
+  input(class=csclass, type=cstype, placeholder=csplacehd)
+
+mixin popup(classCustom,datapopupid,classicon,images, txt)
+   .popup(class=classCustom, data-popup-id=datapopupid, data-lenis-prevent)
+      .popup-overlay
+         .popup-main
+            .popup-close 
+               .icon
+                  if classicon
+                     i(class= classicon)
+                  if images
+                     +img(images)
+               if txt 
+                  p.txt= txt
+            .popup-main-wrapper
+               .popup-over
+                  .popup-wrapper
+                     block
+
+mixin hgallerySlider(rows, itemsPerRow)
+   .hgallery-slider
+      each row in Array(rows)
+         .splide.row
+            .splide__track
+               .splide__list
+                  each item, index in Array(itemsPerRow)
+                     .splide__slide.col.col-4
+                        .hgallery-item
+                           .hgallery-img(data-fancybox="gallery" data-src=`./assets/images/gallery-${index + 1}.jpg`)
+                              .hgallery-img-inner
+                                 +img(`gallery-${index + 1}.jpg`)

@@ -1,0 +1,155 @@
+extends layout/layout
+block vars
+   -title = 'Liên hệ'
+   -mainClass = 'page-quhu'
+   -bodyClass = 'template'
+   -hdClass = ''
+   -jsLibs = [JsJquery, JsAos, JsSplitting, JsGsap, JsScrollTrigger,JsFancybox,JsSelect2]
+   -jsComponents = ['search','btnToTop','header', 'mobile','animated','textAni','scrollTrigger',"fancybox","select2","component","tab"]
+   -cssLibs = [Cssfontawesomeall, Cssfontawesome, CssAos, CssSwiper,CssSplitting,CssFancybox,CssSelect2]
+   -cssComponents = ['banner','pagination','animation','ani','card','box','popup','select2','form']
+   -cssPages = ['home',"news","quhu"]
+block container
+   +breadCrumb(["Liên hệ"])
+   .page-wrapper
+      section.sec-h-contact
+         .h-contact.hadvise
+            .container
+               .hadvise-wr 
+                  .hadvise-bdy
+                     .gldecor.spring.add-class
+                        .spring-in 
+                           +img("spring.png")
+                     .hadvise-row
+                        .hadvise-col(data-aos="fade-right" data-aos-duration="1400")
+                           form(action="" method="method")
+                              .hadvise-frm
+                                 .hadvise-frm-head
+                                    +ttp("Đăng ký nhận <span>tư vấn</span>",
+                                       "",
+                                       "t-ctext ttdecor f-pri tshadow t-upper txt-spl",
+                                       "Đăng ký nhận tư vấn",
+                                       "Quý Phụ huynh Học sinh vui lòng để lại thông tin bên dưới để nhận tư vấn về các khoá học",
+                                       "",
+                                       "decor-1.png",
+                                       "",
+                                       false)
+                                    .hadvise-contact.bg-sec
+                                       p.txt Hotline: 
+                                          span 0938 171 119
+
+                                 .hadvise-frm-inner
+                                    .form-row.row 
+                                       .form-col.col
+                                          .form-item 
+                                             .form-ip
+                                                input.form-input(type="text" placeholder="Nhập họ và tên của bạn")
+                                       .form-col.col
+                                          .form-item 
+                                             .form-ip
+                                                input.form-input(type="tel" placeholder="Nhập SĐT của bạn")
+                                       .form-col.col
+                                          .form-item
+                                             .form-ip
+                                                select.re-select-main(data-placeholder="Khóa học bạn quan tâm")
+                                                   option(value="")
+                                                   option(value="demo")
+                                                      | Khóa học bạn quan tâm
+                                                   option(value="demo")
+                                                      | Khóa học bạn quan tâm
+                                                   option(value="demo")
+                                                      | Khóa học bạn quan tâm
+                                       .form-col.col
+                                          .form-item 
+                                             .form-ip
+                                                input.form-input(type="email" placeholder="Nhập email của bạn")
+                                    
+                                    +btn("Gửi thông tin","btn-pri t-upper wfull btn-main btn-rev","","btn-icon-1.png","button","")
+
+                        .hadvise-col
+                           .hadvise-inner
+                              .gldecor.book.add-class
+                                 .book-in 
+                                    +img("book.png")
+                              .gldecor.cup.add-class
+                                 .cup-in 
+                                    +img("cup.png")
+                              .hadvise-des
+                                 .hadvise-des-inner
+                                    +ttp("<span>Chinh phục các kỳ thi Với đề thi thực chiến</span>",
+                                       "",
+                                       "t-ctext ttdecor f-pri tshadow t-upper txt-spl",
+                                       "Chinh phục các kỳ thi Với đề thi thực chiến",
+                                       "",
+                                       "",
+                                       "",
+                                       "",
+                                       false)
+                                    .hadvise-content 
+                                       .mona-content 
+                                          ul 
+                                             li Bồi Dưỡng Văn Hóa THCS - THPT
+                                             li Luyện Thi ĐGNL
+                                             li Luyện Thi IELTS
+                                             li Học online kết hợp offline 
+                                             li Phương pháp làm bài hiệu quả
+                                    .hadvise-intro.bg-pri
+                                       p.txt Miễn phí các buổi làm bài Thi thủ tại trung tâm
+                                    .hadvise-img.add-class 
+                                       .inner 
+                                          +img("girl-2.png")
+      section.sec-h-map 
+         .h-map 
+            .container 
+               .h-map-flex.row.tabJS
+                  .h-map-iframe.col 
+                     .tabPanel
+                        .map 
+                           iframe(
+                           referrerpolicy="no-referrer-when-downgrade" 
+                           loading="lazy" 
+                           allowfullscreen="" 
+                           style="border:0;" 
+                           height="450" 
+                           width="600" 
+                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15672.60645190584!2d106.61130005721759!3d10.876070858791701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529ff3fd2db8f%3A0xcfc53cd07209f4cd!2zS2h1IETDom4gQ8awLCBIaeG7h3AgVGjDoG5oLCBRdeG6rW4gMTIsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1734345266800!5m2!1svi!2s"
+                           )  
+                     .tabPanel
+                        .map 
+                           iframe(
+                           referrerpolicy="no-referrer-when-downgrade" 
+                           loading="lazy" 
+                           allowfullscreen="" 
+                           style="border:0;" 
+                           height="450" 
+                           width="600" 
+                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15672.60645190584!2d106.61130005721759!3d10.876070858791701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529ff3fd2db8f%3A0xcfc53cd07209f4cd!2zS2h1IETDom4gQ8awLCBIaeG7h3AgVGjDoG5oLCBRdeG6rW4gMTIsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1734345266800!5m2!1svi!2s"
+                           )  
+                     .tabPanel
+                        .map 
+                           iframe(
+                           referrerpolicy="no-referrer-when-downgrade" 
+                           loading="lazy" 
+                           allowfullscreen="" 
+                           style="border:0;" 
+                           height="450" 
+                           width="600" 
+                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15672.60645190584!2d106.61130005721759!3d10.876070858791701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529ff3fd2db8f%3A0xcfc53cd07209f4cd!2zS2h1IETDom4gQ8awLCBIaeG7h3AgVGjDoG5oLCBRdeG6rW4gMTIsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1734345266800!5m2!1svi!2s"
+                           )  
+                  .h-map-cs.col 
+                     .wrapper  
+                        .h-map-scroll 
+                           each val,index in Array(3)
+                              .h-map-cs-it.tabBtn 
+                                 .inner 
+                                    p.tt Cơ sở 1
+                                    ul.add
+                                       li.add-it
+                                          |618/61/24 Quang Trung, P11, Quận Gò Vấp, TP.HCM
+                                       li.add-it
+                                          span.bold Điện thoại:
+                                          span.add-val 0938 171 119 
+                                       li.add-it
+                                          span.bold Email:
+                                          span.add-val luyenthihothanh@gmail.com 
+                                    a(href="").link Liên hệ

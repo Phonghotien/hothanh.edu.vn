@@ -43,3 +43,35 @@ functionSlider('.hbanner-slider', {
       delay: 7000,
    },
 })
+
+
+functionSlider('.h-relate-slide', {
+   speed: 1200,
+   slidesPerView: "auto",
+   spaceBetween: 0,
+   effect: 'slide',
+   autoplay: {
+      delay: 7000,
+   },
+})
+
+
+functionSlider('.exam-bn-slide', {
+   speed: 1200,
+   slidesPerView: "auto",
+   spaceBetween: 0,
+   effect: 'fade',
+   autoplay: {
+      delay: 7000,
+   },
+})
+
+functionSlider('.exam-award-slide', {
+   speed: 1200,
+   slidesPerView: "auto",
+   spaceBetween: 0,
+   effect: 'slide',
+   autoplay: {
+      delay: 7000,
+   },
+})

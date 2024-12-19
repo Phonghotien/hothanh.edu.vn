@@ -31,7 +31,7 @@ if (window.innerWidth >= 1200){
                     x: translateX,
                     y: translateY,
                     ease: "power3.out",
-                    duration: 0.5
+                    duration: 2
                 });
             });
 

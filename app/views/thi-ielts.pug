@@ -1,0 +1,584 @@
+extends layout/layout
+block vars
+   -title = 'Thi Ielts'
+   -mainClass = 'page-exam'
+   -bodyClass = 'home'
+   -hdClass = ''
+   -jsLibs = [JsJquery, JsAos, JsSplitting, JsGsap, JsScrollTrigger,JsSwiper,JsSelect2,JsSplide,JsSplidesSroll,JsFancybox]
+   -jsComponents = ['search','btnToTop','header', 'mobile','animated','textAni','scrollTrigger','swiper','select2','form','splide','addclass','countUp','popup','fancybox','hoverParallax','collapse','component']
+   -cssLibs = [Cssfontawesomeall, Cssfontawesome, CssAos,CssSplitting,CssSelect2,CssSwiper,CssSplide,CssFancybox]
+   -cssComponents = ['animation','ani','banner','swiper','select2','form','box','block','popup','card']
+   -cssPages = ['home','news','quhu']
+
+block container
+   section.sec-exam-bn 
+      .exam-bn.hasWave.parallaxDecJS(style="--bg:white") 
+         .container 
+            .exam-bn-slide 
+               .swiper
+                  .swiper-wrapper 
+                     each val,index in Array(3)
+                        .swiper-slide 
+                           .exam-bn-flex 
+                              .exam-bn-ctn 
+                                 .exam-bn-tt.title-pri.tshadow(data-spl)
+                                    |Chinh phục
+                                    br
+                                    span.pri Ielts 8.5+
+                                    br
+                                    | Từ con số 0
+                                 p.exam-bn-des.mb-24 Hồ Thành đảm bảo chất lượng học tập tốt nhất cho học viên.
+                                 .exam-bn-btn.mb-24 
+                                    +btn("Thi thử ngay","btn-pri btn-main","","btn-icon-1.png","","")
+                                    +btn("Lịch khai giảng","btn-pri btn-trans btn-main","","","","")
+                                 .exam-ava 
+                                    .exam-ava-left 
+                                       each val,index in Array(3)
+                                          .exam-ava-it 
+                                             +img(`ava${index+1}.jpg`)
+                                    .exam-ava-right 
+                                       p.name 500+
+                                       p.des Học viên đạt Toeic 650+
+                              .exam-bn-images
+                                 .imgs 
+                                    .dcor 
+                                       .dcor-img
+                                          .dcor-in.decJS 
+                                             +img("exam-dcor1.png")
+                                       .dcor-img
+                                          .dcor-in.decJS 
+                                             +img("exam-dcor2.png")
+                                    .circles 
+                                       .circle.decJS
+                                          .circle-in 
+                                       .circle.decJS
+                                          .circle-in 
+                                    .img 
+                                       .img-inner 
+                                          +img("exam-imgs.png")
+                                    .exam-bn-nums 
+                                       .exam-bn-numw.decJS
+                                          .exam-bn-num
+                                             +img("ic-exam1.svg")
+                                             .ctn 
+                                                p.num 10.000 + 
+                                                p.des Lượt đăng ký
+                                       .exam-bn-numw.decJS   
+                                          .exam-bn-num
+                                             +img("ic-exam2.svg")
+                                             .ctn 
+                                                p.num 35+ giáo viên
+                                                p.des Chuyên môn cao
+                                       .exam-bn-numw.decJS   
+                                          .exam-bn-num
+                                             +img("ic-exam3.svg")
+                                             .ctn 
+                                                p.num 1000 + 
+                                                p.des Đạt điểm mơ ước
+                                       .exam-bn-numw.decJS   
+                                          .exam-bn-num
+                                             +img("ic-exam1.svg")
+                                             .ctn 
+                                                p.num 1000 + 
+                                                p.des Học viên đạt >800+
+   section.sec-exam-course    
+      .exam-course.ss-pd.pdBot.hasWave(style="--bg:#FFF4F5")
+         .exam-dcor 
+            .dcor-img 
+               +img("exam-dcor3.png")
+            .dcor-img 
+               +img("exam-dcor4.png")
+            .dcor-img 
+               +img("exam-dcor5.png")
+         .container 
+            .exam-course-wrap 
+               +ttp("Lộ trình học Ielts <span>bài bản, hiệu quả</span>",
+                  "ttcenter mb-80",
+                  "t-ctext ttdecor f-pri tshadow t-upper t-center txt-spl",
+                  "Lộ trình học Ielts bài bản, hiệu quả",
+                  " Khơi nguồn động lực, kiến tạo tương lai",
+                  "cup.png",
+                  "decor.png",
+                  "",
+                  false)   
+               .exam-course-flex.row.rows-3.gap-res
+                  .col 
+                     .exam-course-it 
+                        .inner 
+                           .icon 
+                              +img("ic-cour1.svg")    
+                           p.tt 3 Chặng
+                           p.des  Sẽ có 3 giai đoạn  
+                  .col 
+                     .exam-course-it 
+                        .inner 
+                           .icon 
+                              +img("ic-cour2.svg")    
+                           p.tt 18 tháng
+                           p.des  Đồng hành và giảng dạy      
+                  .col 
+                     .exam-course-it 
+                        .inner 
+                           .icon 
+                              +img("ic-cour3.svg")    
+                           p.tt Ielts LR 8+
+                           p.des  Cam kết đầu ra              
+               .exam-cl.collapse-block 
+                  each val,index in Array(3)
+                     .exam-cl-item.collapse-item 
+                        .icons 
+                           +img("ic-collapse.svg")
+                        .exam-cl-head.collapse-head 
+                           .inner
+                              span.txt Giai đoạn 1: Hệ thống kiến thức
+                              span.icon 
+                                 i.fa-solid.fa-plus
+                                 i.fa-solid.fa-minus
+                           p.des Học và vận dụng các tips tránh bẫy phổ biến. Bổ sung vốn từ vựng của 10 chủ đề hay gặp (tương đương khoảng 300 từ mới) nhằm hỗ trợ việc Nghe hiểu và Đọc hiểu. Kiến thức ngữ pháp bắt buộc nắm vững được tổng hợp qua 9 mindmap siêu dễ nhớ.
+                        .exam-cl-body.collapse-body 
+                           .small-cl.cl-small
+                              each val,i in Array(2) 
+                                 .small-cl-item.cl-items
+                                    .small-cl-head.cl-heads
+                                       span.txt Chặng 1: 250+
+                                       span.right 
+                                          span.right-txt 37 bài học - 6 bài kiểm tra
+                                          span.icon 
+                                             i.fa-solid.fa-caret-down
+                                    .small-cl-body.cl-bodies
+                                       ul 
+                                          li Listening: Tranh tả người
+                                          li Reading: Giới thiệu chung về Part 5
+                                          li Listening: Giới thiệu chung về câu hỏi WH và câu hỏi How
+               +btn("Thi thử ngay","btn-pri btn-main center","","btn-icon-1.png","","")
+   section.sec-exam-achive 
+      .exam-achive.hasWave.ss-pd-t(style="--bg:#FFFFFF")
+         .container 
+            .exam-achive-flex
+               .exam-achive-images 
+                  .exam-achive-models 
+                     .imgs 
+                        .starGroup 
+                           +img("starGroup.png")
+                        .dcor 
+                           .dcor-img 
+                              +img("exam-dcor6.png")
+                           .dcor-img 
+                              +img("exam-dcor7.png")
+                        .img   
+                           .img-inner 
+                              +img("exam-achive-model.png")  
+               .exam-achive-ctn.pdBotmin 
+                  .wrapper 
+                     +ttp("<span>Bạn sẽ đạt được gì sau khóa học?</span>",
+                        "mb-24",
+                        "t-ctext ttdecor f-pri tshadow txt-spl",
+                        "Bạn sẽ đạt được gì sau khóa học?",
+                        "",
+                        "",
+                        "",
+                        "",
+                        false)  
+                     .exam-achive-box.mb-24
+                        .exam-achive-it(data-aos="fade-up-cus") 
+                           +img("ic-ach1.svg")
+                           .ctn 
+                              bold Học tiếng anh học thuật nền tảng 
+                              |từ sớm sẽ giúp các con có sự chuẩn bị sớm, và tự tin hơn trong các kỳ thi, có thể phát huy được tối đa khả năng sử dụng ngôn ngữ của mình. Sau một khoảng thời gian học từ 2 đến 2 năm rưỡi học liên tục thì Học sinh có thể đạt được mục tiêu từ 5.0-5.5 hoặc 6.0-6.5 hoặc hơn với tùy lớp.
+                        .exam-achive-it(data-aos="fade-up-cus" data-aos-delay="300") 
+                           +img("ic-ach2.svg")
+                           .ctn 
+                              bold Lưu ý 
+                              |là lớp này tập trung vào kỹ năng, không phải là lớp Ngữ pháp. Các bài tập ngữ pháp cũng sẽ xuất hiện nhưng với vai trò là dạng bài bổ trợ, không phải bài luyện tập chính.
+                        .exam-achive-it(data-aos="fade-up-cus" data-aos-delay="500") 
+                           +img("ic-ach3.svg")
+                           .ctn 
+                              bold Nội dung khóa học 
+                              |sẽ tập trung vào các kỹ năng học thuật nghe, nói, đọc, viết, kiến thức nền ở các chủ đề khác nhau, kỹ năng tranh luận, thuyết trình, viết văn nghị luận. Lớp học này sẽ được triển khai lâu dài, chia ra thành các đợt nhỏ (1 buổi/ 1 tuần, 12 buổi/ 1 đợt tương đương với 3 tháng/ 1 đợt). Lớp sẽ kiểm tra hết đợt vào buổi học số 12 của đợt học
+                     .btn-wrap(data-aos="fade-up-cus" data-aos-delay="700") 
+                        +btn("Thi thử ngay","btn-pri btn-main","","btn-icon-1.png","","")
+   section.sec-exam-tcher 
+      .exam-tcher 
+         .sec-hmember 
+            .hmember.pd-120 
+               .gldecor.recipe.add-class
+                  .recipe-in 
+                     +img("recipe.png")
+               .gldecor.recipe.recipe-1.add-class
+                  .recipe-in 
+                     +img("recipe-1.png")
+               .gldecor.axis.add-class
+                  .axis-in 
+                     +img("axis.png")
+               .gldecor.math.add-class
+                  .math-in 
+                     +img("math.png")
+               .gldecor.circle.add-class
+                  .circle-in 
+                     +img("circle.png")
+               .gldecor.smile.add-class
+                  .smile-in 
+                     +img("smile.png")
+               .gldecor.vector.add-class
+                  .vector-in 
+                     +img("vector.png")
+               .hmember-wr 
+                  .container
+                     .hmember-head
+                        +ttp("Đội ngũ giảng viên <span>tâm huyết</span>",
+                                 "ttcenter mb-60",
+                                 "t-ctext ttdecor f-pri tshadow t-upper mb-12 t-center txt-spl",
+                                 "Đội ngũ giảng viên tâm huyết",
+                                 "Khơi nguồn động lực, kiến tạo tương lai",
+                                 "cup.png",
+                                 "decor.png",
+                                 "",
+                                 false)
+                     .hmember-slider(data-aos="zoom-in")
+                        .swiper.row 
+                           .swiper-wrapper
+                              each val,index in Array(5)
+                                 .swiper-slide.col.col-3 
+                                    .teacher
+                                       a.teacher-link(href="") 
+                                       .teacher-inner 
+                                          .box 
+                                             .box-inner 
+                                                .box-img
+                                                   +img("teacher-1.png")
+                                                .box-decor 
+                                                   +img("box-decor.png")
+                                          .teacher-des 
+                                             .teacher-des-inner 
+                                                h4.teacher-tt Nguyễn Thị Thủy Tiên
+                                                .icon 
+                                                   +img("tick.png") 
+                                             p.txt Thủ khoa sư phạm Toán
+                                                br 
+                                                | Hơn 7 năm kinh nghiệm giảng dạy
+                        .swiper-gr
+                           .swiper-prev
+                              i.fa-solid.fa-chevron-left
+                           .swiper-next
+                              i.fa-solid.fa-chevron-right
+                           .swiper-pagination 
+   section.sec-exam-award 
+      .exam-award.ss-pd.hasWave(style="--bg:#FFF4F5").pdBot 
+         .dcor 
+            .dcor-img 
+               +img("exam-dcor8.png")
+            .dcor-img 
+               +img("exam-dcor9.png")
+            .dcor-img 
+               +img("recipe-1.png")
+            .dcor-img 
+               +img("vector.png")
+         .container 
+            +ttp("Thành tích <span>nổi bật</span>",
+               "ttcenter mb-60",
+               "t-ctext ttdecor f-pri tshadow t-upper mb-12 t-center txt-spl",
+               "Thành tích nổi bật",
+               "Khơi nguồn động lực, kiến tạo tương lai",
+               "cup.png",
+               "decor.png",
+               "",
+               false)
+            .exam-award-wrap
+               
+               .exam-award-slide 
+                  .swiper.row.rows-3.gap-res
+                     .swiper-wrapper
+                        each val,index in Array(4)
+                           .swiper-slide.col 
+                              +ItemToeic()
+                  +SwiperControl 
+                  +SwiperPagination
+   section.sec-exam-feel 
+      .exam-feel.ss-pd-b
+         .container 
+            .exam-feel-wrap
+               .dcor 
+                  .dcor-img 
+                     +img("exam-dcor10.png") 
+               +ttp("Cảm nhận từ <span>học viên</span>",
+                  "ttcenter mb-60",
+                  "t-ctext ttdecor f-pri tshadow t-upper mb-12 t-center txt-spl",
+                  "Cảm nhận từ học viên",
+                  "Khơi nguồn động lực, kiến tạo tương lai",
+                  "cup.png",
+                  "decor.png",
+                  "",
+                  false)
+               .exam-feel-fback 
+                  .exam-feel-box 
+                     .exam-feel-l.row 
+                        .exam-feel-line.col.getWidthGrid 
+                           .inner.slideJs 
+                              each val,i in Array(3)
+                                 .exam-feel-it 
+                                    .img 
+                                       +img(`fb${( i + 1)}.jpg`)
+                              each val,i in Array(3)
+                                 .exam-feel-it 
+                                    .img 
+                                       +img(`fb${( i + 1)}.jpg`)
+                        .exam-feel-line.col.getWidthGrid 
+                           .inner.slideJs 
+                              each val,i in Array(3)
+                                 .exam-feel-it 
+                                    .img 
+                                       +img(`fb${( i + 3)}.jpg`)
+                              each val,i in Array(3)
+                                 .exam-feel-it 
+                                    .img 
+                                       +img(`fb${( i + 3)}.jpg`)
+                        .exam-feel-line.col.getWidthGrid 
+                           .inner.slideJs 
+                              each val,i in Array(3)
+                                 .exam-feel-it 
+                                    .img 
+                                       +img(`fb${( i + 6)}.jpg`)
+                              each val,i in Array(3)
+                                 .exam-feel-it 
+                                    .img 
+                                       +img(`fb${( i + 6)}.jpg`)
+                        .exam-feel-line.col.getWidthGrid 
+                           .inner.slideJs 
+                              each val,i in Array(3)
+                                 .exam-feel-it 
+                                    .img 
+                                       +img(`fb${( i + 9)}.jpg`)
+                              each val,i in Array(3)
+                                 .exam-feel-it 
+                                    .img 
+                                       +img(`fb${( i + 9)}.jpg`)
+                        .exam-feel-line.col.getWidthGrid 
+                           .inner.slideJs 
+                              each val,i in Array(3)
+                                 .exam-feel-it 
+                                    .img 
+                                       +img(`fb${( i + 12)}.jpg`)
+                              each val,i in Array(3)
+                                 .exam-feel-it 
+                                    .img 
+                                       +img(`fb${( i + 12)}.jpg`)
+   section.sec-hpartner
+      .hpartner.pd-60
+         .hpartner-wr 
+            .hpartner-bdy
+               .hpartner-slider
+                  .splide.row
+                     .splide__track
+                        .splide__list
+                           each val, index in Array(5)
+                              .splide__slide.col
+                                 .hpartner-item 
+                                    .inner 
+                                       +img(`partner-${index + 1}.png`)
+   section.sec-exam-table 
+      .exam-table.ss-pd 
+         .dcor 
+            .dcor-img 
+               +img("exam-dcor3.png") 
+            .dcor-img 
+               +img("exam-dcor4.png") 
+            .dcor-img 
+               +img("exam-dcor5.png") 
+            .dcor-img 
+               +img("exam-dcor1.png") 
+         .bg-grid 
+            +img("exam-table.png")
+         .container 
+            .exam-table-wrap 
+               +ttp("Lịch <span>khai giảng</span>",
+                  "ttcenter mb-60",
+                  "t-ctext ttdecor f-pri tshadow t-upper mb-12 t-center txt-spl",
+                  "Lịch khai giảng",
+                  "Khơi nguồn động lực, kiến tạo tương lai",
+                  "cup.png",
+                  "decor.png",
+                  "",
+                  false)    
+            .exam-tables 
+               table 
+                  thead 
+                     tr 
+                        th KHOÁ HỌC
+                        th MÃ LỚP
+                        th LỊCH HỌC          
+                        th NGÀY KHAI GIẢNG
+                        th ƯU ĐÃI
+                        th 
+                  tbody 
+                     -
+                        var calens = [
+                           {
+                              col1:"<strong>TOEIC</strong>",
+                              col2:"T38",
+                              col3:"Ca 2 (2 – 4 – 6) <br> 19h45 – 21h15",
+                              col4:"20/06/2023 <br> 30/06/2023",
+                              col5:"<span class='table-tag hot'>HOT</span>",
+                              sign:"<a href=''>Đăng ký ngay</a>"
+                           },
+                           {
+                              col1:"<strong>TOEIC</strong>",
+                              col2:"T38",
+                              col3:"Ca 2 (2 – 4 – 6) <br> 19h45 – 21h15",
+                              col4:"20/06/2023 <br> 30/06/2023",
+                              col5:"<span class='table-tag sale'>ƯU ĐÃI SÂU</span>",
+                              sign:"<a href=''>Đăng ký ngay</a>"
+                           },
+                           {
+                              col1:"<strong>TOEIC</strong>",
+                              col2:"T38",
+                              col3:"Ca 2 (2 – 4 – 6) <br> 19h45 – 21h15",
+                              col4:"20/06/2023 <br> 30/06/2023",
+                              col5:"<span class='table-tag new'>New</span>",
+                              sign:"<a href=''>Đăng ký ngay</a>"
+                           },
+                           {
+                              col1:"<strong>TOEIC</strong>",
+                              col2:"T38",
+                              col3:"Ca 2 (2 – 4 – 6) <br> 19h45 – 21h15",
+                              col4:"20/06/2023 <br> 30/06/2023",
+                              col5:"<span class='table-tag new'>New</span>",
+                              sign:"<a href=''>Đăng ký ngay</a>"
+                           },
+                           {
+                              col1:"<strong>TOEIC</strong>",
+                              col2:"T38",
+                              col3:"Ca 2 (2 – 4 – 6) <br> 19h45 – 21h15",
+                              col4:"20/06/2023 <br> 30/06/2023",
+                              col5:"<span class='table-tag new'>New</span>",
+                              sign:"<a href=''>Đăng ký ngay</a>"
+                           },
+                           {
+                              col1:"<strong>TOEIC</strong>",
+                              col2:"T38",
+                              col3:"Ca 2 (2 – 4 – 6) <br> 19h45 – 21h15",
+                              col4:"20/06/2023 <br> 30/06/2023",
+                              col5:"<span class='table-tag new'>New</span>",
+                              sign:"<a href=''>Đăng ký ngay</a>"
+                           },
+                           {
+                              col1:"<strong>TOEIC</strong>",
+                              col2:"T38",
+                              col3:"Ca 2 (2 – 4 – 6) <br> 19h45 – 21h15",
+                              col4:"20/06/2023 <br> 30/06/2023",
+                              col5:"<span class='table-tag new'>New</span>",
+                              sign:"<a href=''>Đăng ký ngay</a>"
+                           },
+                           {
+                              col1:"<strong>TOEIC</strong>",
+                              col2:"T38",
+                              col3:"Ca 2 (2 – 4 – 6) <br> 19h45 – 21h15",
+                              col4:"20/06/2023 <br> 30/06/2023",
+                              col5:"<span class='table-tag new'>New</span>",
+                              sign:"<a href=''>Đăng ký ngay</a>"
+                           },
+                        ]
+                     each calen in calens
+                        tr 
+                           td!=calen.col1
+                           td!=calen.col2
+                           td!=calen.col3
+                           td!=calen.col4
+                           td!=calen.col5
+                           td!=calen.sign
+   
+   section.sec-hgallery 
+      .hgallery
+         .hgallery-wr 
+            .hgallery-bdy
+               +hgallerySlider(2, 6)
+   section.sec-hadvise 
+      .hadvise.pd-160 
+         .hadvise-bg 
+            +img("hadvise.jpg")
+         .container
+            .hadvise-wr 
+               .hadvise-bdy
+                  .gldecor.spring.add-class
+                     .spring-in 
+                        +img("spring.png")
+                  .hadvise-row
+                     .hadvise-col(data-aos="fade-right" data-aos-duration="1400")
+                        form(action="" method="method")
+                           .hadvise-frm
+                              .hadvise-frm-head
+                                 +ttp("Đăng ký nhận <span>tư vấn</span>",
+                                    "",
+                                    "t-ctext ttdecor f-pri tshadow t-upper txt-spl",
+                                    "Đăng ký nhận tư vấn",
+                                    "Quý Phụ huynh Học sinh vui lòng để lại thông tin bên dưới để nhận tư vấn về các khoá học",
+                                    "",
+                                    "decor.png",
+                                    "",
+                                    false)
+                                 .hadvise-contact.bg-sec
+                                    p.txt Hotline: 
+                                       span 0938 171 119
+
+                              .hadvise-frm-inner
+                                 .form-row.row 
+                                    .form-col.col
+                                       .form-item 
+                                          .form-ip
+                                             input.form-input(type="text" placeholder="Nhập họ và tên của bạn")
+                                    .form-col.col
+                                       .form-item 
+                                          .form-ip
+                                             input.form-input(type="tel" placeholder="Nhập SĐT của bạn")
+                                    .form-col.col
+                                       .form-item
+                                          .form-ip
+                                             select.re-select-main(data-placeholder="Khóa học bạn quan tâm")
+                                                option(value="")
+                                                option(value="demo")
+                                                   | Khóa học bạn quan tâm
+                                                option(value="demo")
+                                                   | Khóa học bạn quan tâm
+                                                option(value="demo")
+                                                   | Khóa học bạn quan tâm
+                                    .form-col.col
+                                       .form-item 
+                                          .form-ip
+                                             input.form-input(type="email" placeholder="Nhập email của bạn")
+                                 
+                                 +btn("Gửi thông tin","btn-pri t-upper wfull btn-main btn-rev","","btn-icon-1.png","button","")
+
+                     .hadvise-col
+                        .hadvise-inner
+                           .gldecor.book.add-class
+                              .book-in 
+                                 +img("book.png")
+                           .gldecor.cup.add-class
+                              .cup-in 
+                                 +img("cup.png")
+                           .hadvise-des
+                              .hadvise-des-inner
+                                 +ttp("<span>Chinh phục các kỳ thi Với đề thi thực chiến</span>",
+                                    "",
+                                    "t-ctext ttdecor f-pri tshadow t-upper txt-spl",
+                                    "Chinh phục các kỳ thi Với đề thi thực chiến",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    false)
+                                 .hadvise-content 
+                                    .mona-content 
+                                       ul 
+                                          li Bồi Dưỡng Văn Hóa THCS - THPT
+                                          li Luyện Thi ĐGNL
+                                          li Luyện Thi IELTS
+                                          li Học online kết hợp offline 
+                                          li Phương pháp làm bài hiệu quả
+                                 .hadvise-intro.bg-pri
+                                    p.txt Miễn phí các buổi làm bài Thi thủ tại trung tâm
+                                 .hadvise-img.add-class 
+                                    .inner 
+                                       +img("girl.png")
+                  
+
+

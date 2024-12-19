@@ -1,0 +1,68 @@
+extends layout/layout
+block vars
+   -title = 'Tin tức'
+   -mainClass = 'page-quhu'
+   -bodyClass = 'template'
+   -hdClass = ''
+   -jsLibs = [JsJquery, JsAos, JsSplitting, JsGsap, JsScrollTrigger,JsFancybox]
+   -jsComponents = ['search','btnToTop','header', 'mobile','animated','textAni','scrollTrigger',"fancybox"]
+   -cssLibs = [Cssfontawesomeall, Cssfontawesome, CssAos, CssSwiper,CssSplitting,CssFancybox]
+   -cssComponents = ['banner','pagination','animation','ani','card','box','popup']
+   -cssPages = ['home',"news","quhu"]
+block container
+   +breadCrumb(["Tin tức"])
+   section.sec-h-news 
+      .h-news.ss-pd-b
+         .container 
+            .h-news-wrap 
+               +Heads("mb-24")
+                  +hTitle48("Tin tức <span>nổi bật</span>")
+                  .h-news-tags 
+                     a(href="").h-news-tag  Tin nổi bật
+                     a(href="").h-news-tag  Luyện thi
+                     a(href="").h-news-tag  Cẩm nang
+                     a(href="").h-news-tag  Chia sẻ
+               .h-news-l.row.rows-3.gap-res 
+                  -
+                     var items = [
+                        {
+                           img:"hn1.jpg"
+                        },
+                        {
+                           img:"hn2.jpg"
+                        },
+                        {
+                           img:"hn3.jpg"
+                        },
+                        {
+                           img:"hn3.jpg"
+                        },
+                        {
+                           img:"hn4.jpg"
+                        },
+                        {
+                           img:"hn5.jpg"
+                        },
+                        {
+                           img:"hn6.jpg"
+                        },
+                        {
+                           img:"hn3.jpg"
+                        },
+                        {
+                           img:"hn7.jpg"
+                        },
+                     ]
+                  each item in items
+                     .col 
+                        +ItemNews(item)
+                  
+                  +pagination([
+                     { type: 'prev' },
+                     { type: 'current', number: 1 },
+                     { type: 'page', number: 2 },
+                     { type: 'dot' },
+                     { type: 'page', number: 5 },
+                     { type: 'page', number: 6 },
+                     { type: 'next' }
+                     ],"")

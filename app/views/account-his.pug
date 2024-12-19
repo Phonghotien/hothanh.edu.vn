@@ -1,0 +1,91 @@
+extends layout/layout
+block vars
+   -title = 'Lịch sử làm bài'
+   -mainClass = 'page-account'
+   -bodyClass = 'home'
+   -hdClass = ''
+   -jsLibs = [JsJquery, JsAos, JsSplitting, JsGsap, JsScrollTrigger,JsSelect2,JsSplidesSroll]
+   -jsComponents = ['search','btnToTop','header', 'mobile','animated','textAni','scrollTrigger','popup','select2','form','addclass','fancybox','hoverParallax','component']
+   -cssLibs = [Cssfontawesomeall, Cssfontawesome, CssAos,CssSplitting,CssSelect2]
+   -cssComponents = ['animation','ani','banner','pagination','select2','form','box','block','card','popup']
+   -cssPages = ['home','quhu']
+
+block container
+   +breadCrumb(["Bộ tài khoản"])
+   section.sec-haccount 
+      .haccount.ss-pd
+         .container 
+            .haccount-wrap
+               .haccount-box 
+                  .haccount-ctrls 
+                     a(href="").haccount-ctrl 
+                        +img("ic-account-usr.svg")
+                        span.txt Thông tin tài khoản
+                     a(href="").haccount-ctrl.active 
+                        +img("ic-account-his.svg")
+                        span.txt Lịch sử làm bài
+                  .haccount-panels 
+                     .haccount-panel 
+                        .heads 
+                           p.tt Thông tin tài khoản
+                           .haccount-btns 
+                              .haccount-btn Chỉnh sửa
+                              .haccount-btn Đổi mật khẩu
+                        .bodies 
+                           .bodies-head.row.gap-res 
+                              .bodies-item.col.yel 
+                                 .inner 
+                                    +img("account-ic1.svg")
+                                    .ctn 
+                                       p.name 720 giờ
+                                       p.val Tổng thời gian làm test
+                              .bodies-item.col.blue 
+                                 .inner 
+                                    +img("account-ic2.svg")
+                                    .ctn 
+                                       p.name 30 đề
+                                       p.val Số bài test đã hoàn thành
+                              .bodies-item.col.green
+                                 .inner 
+                                    +img("account-ic3.svg")
+                                    .ctn 
+                                       p.name 1.200 điểm
+                                       p.val Số điểm đã đạt được
+                           .bodies-table
+                              table 
+                                 thead 
+                                    tr 
+                                       th Ngày làm bài
+                                       th Tên bài
+                                       th Dạng bài
+                                       th Trạng thái
+                                       th Điểm
+                                       th
+                                 tbody 
+                                    each val,index in Array(3)
+                                       tr 
+                                          td.first 17/11/2024
+                                          td Đề thi E 2020 Test 01
+                                          td.blue Full test
+                                          td.complete Hoàn thành
+                                          td 190
+                                          td 
+                                             a(href="").link Xem chi tiết 
+                                    tr 
+                                       td.first 17/11/2024
+                                       td Đề thi E 2020 Test 01
+                                       td.blue Full test
+                                       td.cancel Hoàn thành
+                                       td 190
+                                       td 
+                                          a(href="").link Xem chi tiết 
+                           +pagination([
+                              { type: 'prev' },
+                              { type: 'current', number: 1 },
+                              { type: 'page', number: 2 },
+                              { type: 'dot' },
+                              { type: 'page', number: 5 },
+                              { type: 'page', number: 6 },
+                              { type: 'next' }
+                              ],"")
+                                    

@@ -310,3 +310,33 @@ mixin Checker(type,shape,text,classCustom,num,name)
             input(type=type , name=name)
             span.sqr 
             span.txt #{text}
+mixin ItemSet()
+   .set-item
+      .inner 
+         .info 
+            .set-tags 
+               .set-tag học viên
+               .set-tag.free miễn phí
+            h4.info-name Đề 02
+            .info-line
+               .info-it
+                  +img("ic-set1.svg")
+                  span.txt 
+                     span.txt-bold 39K
+                     | lượt làm Test
+               .info-it
+                  +img("ic-set2.svg")
+                  span.txt 
+                     span.txt-bold 120
+                     |  phút
+               .info-it
+                  +img("ic-set3.svg")
+                  span.txt 
+                     span.txt-bold 200
+                     |  câu hỏi
+         .bottom
+            .set-btn 
+               +img("ic-set4.svg")
+               span.txt Làm bài
+            .bottom-three 
+               +img("ic-threedot.svg") 

@@ -1,0 +1,118 @@
+extends layout/layout
+block vars
+   -title = 'Tin tức - Chi tiết'
+   -mainClass = 'page-quhu'
+   -bodyClass = 'template'
+   -hdClass = ''
+   -jsLibs = [JsJquery, JsAos, JsSplitting, JsGsap, JsScrollTrigger,JsFancybox,JsSwiper]
+   -jsComponents = ['search','btnToTop','header', 'mobile','animated','textAni','scrollTrigger',"fancybox","swiper"]
+   -cssLibs = [Cssfontawesomeall, Cssfontawesome, CssAos, CssSwiper,CssSplitting,CssFancybox,CssSwiper]
+   -cssComponents = ['banner','pagination','animation','ani','card','box','popup','swiper']
+   -cssPages = ['home',"news","quhu"]
+block container
+   +breadCrumb(["Tin tức"],["Chi tiết"])
+   section.sec-h-newsdt
+      .h-newsdt.ss-pd-b
+         .container 
+            .h-newsdt-f.row 
+               .h-newsdt-main.col 
+                  .wrapper 
+                     h1.h-newsdt-tt Đề thi mẫu anh văn đầu vào dạng VSTEP
+                     .h-newsdt-infos 
+                        .h-newsdt-info
+                           +img("ic-usr.svg")
+                           span.txt Admin
+                        .h-newsdt-info
+                           +img("ic-clock.svg")
+                           span.txt 12:52 - 20.04.2024
+                     .mona-content 
+                        p Với kinh nghiệm nhiều năm ôn tập và đồng hành cùng các bạn sinh viên vượt qua bài thi Tiếng Anh Đầu Vào cùng số điểm cao, Agena tặng các bạn sắp thi dạng Nói – Viết cuốn Ebook.
+                        p Đây là cuốn Ebook thầy cô Agena soạn để support các bạn chuẩn bị thi Tiếng Anh đầu vào, Tiếng Anh Đầu ra dạng Nghe – Nói – Đọc – Viết format các bài thi IELTS rút gọn.
+                        p Agena English chúc các bạn có một kì thi đầu vào thật nhiều may mắn và đạt được kết quả cao nhé!
+                        p Các bộ đề thi được chọn lọc kĩ lưỡng và format 100% như thi thật, đem lại cho học viên sự chuẩn bị tốt nhất cho kì thi sắp tới.
+                        div 
+                           +img("mona1.jpg")
+                        p Agena English gởi bạn link download trọn bộ bộ sách này ở định dạng file PDF, bản in đẹp.
+                        div 
+                           +img("mona2.jpg")
+                        h4 Giới thiệu bộ đề thi TOEIC 2023 – ETS 2023
+                        p Đây là bộ đề thi TOEIC cho biết xu hướng ra đề thi TOEIC mới nhất 2023.
+                        p Bộ đề ETS 2023 gồm 2 cuốn là cuốn 10 test phần nghe ETS TOEIC Regular Test Practice 1000 Vol. 1 LC và 10 test phần đọc ETS TOEIC Regular Test Practice 1000 Vol. 1 RC.
+                        p Theo như YBM, đơn vị phát hành độ quyền các bộ đề thi TOEIC từ ETS công bố, thì đây là 10 bộ đề thi TOEIC mới nhất. Bộ đề bao gồm 9 đề thi thật và 1 đề giả định.
+                        p Phần nghe được đánh giá là giống 100% khi đi thi thật, giọng đọc giống 100% khi đi thi thật.
+                        p Ngoài ra, bộ sách còn bao gồm cả phần giải thích chi tiết các đáp án. Tuy nhiên, phần giải thích này được viết bằng tiếng Hàn nên sẽ khó tiếp cận với các thí sinh Việt Nam.
+                     .h-newsdt-theme 
+                        span.txt Chủ Đề
+                        .h-newsdt-tags 
+                           a(href="").h-newsdt-tag Luyện thi
+                           a(href="").h-newsdt-tag Toeic
+                           a(href="").h-newsdt-tag Kỹ năng
+               .h-newsdt-side.col 
+                  .wrapper 
+                     .h-newsdt-block 
+                        p.tt Chủ đề
+                        .h-news-tags 
+                           a(href="").h-news-tag  Tip học từ vựng
+                           a(href="").h-news-tag  Reading
+                           a(href="").h-news-tag  Writing
+                           a(href="").h-news-tag  Listening
+                           a(href="").h-news-tag  Reading
+                           a(href="").h-news-tag  Speaking
+                           a(href="").h-news-tag  Từ vựng hay
+                           a(href="").h-news-tag  Ngữ pháp
+                           a(href="").h-news-tag  Phát âm
+                     .h-newsdt-block 
+                        p.tt Các khóa luyện thi
+                           .h-newsdt-courses
+                              a(href="").h-newsdt-course 
+                                 +img("ic-course1.svg")
+                                 span.txt Luyện thi Đại học
+                              a(href="").h-newsdt-course 
+                                 +img("ic-course2.svg")
+                                 span.txt Luyện thi ĐGNL
+                              a(href="").h-newsdt-course 
+                                 +img("ic-course3.svg")
+                                 span.txt Luyện thi TOEIC, IELTS
+                     .h-newsdt-block 
+                        p.tt Tài liệu ôn luyện TOEIC
+                           .h-newsdt-courses
+                              a(href="").h-newsdt-course 
+                                 span.txt Đề thi mẫu anh văn đầu vào dạng VSTEP 
+                              a(href="").h-newsdt-course 
+                                 span.txt Đề thi mẫu anh văn đầu vào dạng VSTEP 
+                              a(href="").h-newsdt-course 
+                                 span.txt Đề thi mẫu anh văn đầu vào dạng VSTEP 
+                     .h-newsdt-banner 
+                        a(href="").img 
+                           +img("bn-verti.jpg")
+   section.sec-h-relate 
+      .h-relate.ss-pd.bg-gray
+         .container 
+            +Heads("mb-24")
+               +hTitle48("Tin <span>liên quan</span>")
+               +btn("Tất cả tin","btn-pri btn-main","","","","")
+            .h-relate-slide 
+               .swiper.row.rows-3.gap-res
+                  .swiper-wrapper 
+                     -
+                        var items = [
+                           {
+                              img:"hn1.jpg"
+                           },
+                           {
+                              img:"hn2.jpg"
+                           },
+                           {
+                              img:"hn3.jpg"
+                           },
+                           {
+                              img:"hn3.jpg"
+                           },
+                           {
+                              img:"hn4.jpg"
+                           },
+                        ]
+                     each item in items
+                        .swiper-slide.col
+                           +ItemNews(item)
+               +SwiperPagination()

@@ -11,26 +11,26 @@ mixin mobileMxh(links)
       each link in links
          a.mobile-mxh-link(href="")
             +img(link.imgSrc)
-                
+
 mixin btn(name, classbtn, classIcon, img, button, datapop)
    if button !== "button"
       a(class=classbtn href="#")
          span.txt #{name}
          if classIcon || img
-         .icon
-            if classIcon
-               i(class=classIcon)
-            if img
-               +img(img)
+            .icon
+               if classIcon
+                  i(class=classIcon)
+               if img
+                  +img(img)
    else
       button(type="submit" class=classbtn data-popup=datapop ? datapop : null)
          span.txt #{name}
          if classIcon || img
-         .icon
-            if classIcon
-               i(class=classIcon)
-            if img
-               +img(img)
+            .icon
+               if classIcon
+                  i(class=classIcon)
+               if img
+                  +img(img)
 
 mixin footerList(arr)
    ul.footer-list(class="menu-list")
@@ -95,6 +95,7 @@ mixin pagination(pages,classCustom)
                         li
                            a.page-numbers.prev(href="")
                               i.fa-regular.fa-arrow-left
+                              span.txt Trước
                      else if page.type === 'current'
                         li
                            a.page-numbers.current(href="")= page.number
@@ -104,6 +105,7 @@ mixin pagination(pages,classCustom)
                      else if page.type === 'next'
                         li
                            a.page-numbers.next(href="")
+                              span.txt Tiếp
                               i.fa-regular.fa-arrow-right
                      else
                         li
@@ -152,10 +154,10 @@ mixin breadCrumb(arr)
             ul.breadcrumb-list
                li.breadcrumb-item(data-aos="fade-right")
                   a.breadcrumb-link(href="")
-                  | Trang chủ
+                     | Trang chủ
                each arrs in arr
                   li.breadcrumb-item(data-aos="fade-right")
-                     a.breadcrumb-link(href="") #{arrs.txt}
+                     a.breadcrumb-link(href="")=arrs
 
 mixin ttp(text, classtt, classCustom,datatt ,txt, titledecor, decorimg , dataaos, dataspl)
    .title(class=classtt)
@@ -205,7 +207,7 @@ mixin footerSocialItem(img)
       a.footer-social-link(href="")
          +img(img) 
 mixin csinput(csclass, cstype, csplacehd)
-  input(class=csclass, type=cstype, placeholder=csplacehd)
+   input(class=csclass, type=cstype, placeholder=csplacehd)
 
 mixin popup(classCustom,datapopupid,classicon,images, txt)
    .popup(class=classCustom, data-popup-id=datapopupid, data-lenis-prevent)
@@ -236,3 +238,75 @@ mixin hgallerySlider(rows, itemsPerRow)
                            .hgallery-img(data-fancybox="gallery" data-src=`./assets/images/gallery-${index + 1}.jpg`)
                               .hgallery-img-inner
                                  +img(`gallery-${index + 1}.jpg`)
+
+//================ Quhu Mixin
+mixin hTitle48(tt)
+   h3.h-title.fz-48!=tt
+mixin Heads(classCustom)
+   .h-heads(class=classCustom)
+      block
+
+mixin ItemNews(item)
+   .newsit 
+      a.newsit-link(href="") 
+      .newsit-in 
+         .newsit-img 
+            .in
+               +img(item.img)
+         .newsit-des 
+            .newsit-tag 
+               p.tag 12/12/2024
+            .newsit-des-in 
+               h3.newsit-tt 
+                  | Khóa luyện thi THPT Quốc gia Online tại Trung tâm
+               p.newsit-txt Với kinh nghiệm nhiều năm ôn tập và đồng hành cùng các bạn sinh viên vượt qua bài thi Tiếng Anh Đầu Vào cùng số điểm cao, Agena tặng các bạn sắp thi dạng Nói – Viết cuốn Ebook.
+               .newsit-btn(href="") Xem thêm 
+mixin SwiperControl(classCustom) 
+   .swiper-gr(class=classCustom)
+      .swiper-prev
+         i.fa-solid.fa-chevron-left
+      .swiper-next
+         i.fa-solid.fa-chevron-right
+mixin SwiperPagination(classCustom)
+   .swiper-pagination(class=classCustom)
+mixin ItemToeic()
+   .item-toeic 
+      .inner 
+         .img-tag 
+            +img("toeic-85.png")
+         .img 
+            a(href="").img-inner
+               +img("toeic-img.png")
+         .info
+            h4
+               a(href="").info-tt  Trần Diệu My
+            .info-points 
+               each val,index in Array(4)
+                  .info-point 
+                     p.name Listening
+                     p.des 8.5
+mixin Checker(type,shape,text,classCustom,num,name)
+   if(num == "has")
+      if (shape == "circle")
+         label.checker(class=classCustom) 
+            input(type=type, name=name)
+            span.circle 
+            span.txt #{text}
+            span.num 12
+      else 
+         label.checker(class=classCustom) 
+            input(type=type , name=name)
+            span.sqr 
+            span.txt #{text}
+            span.num 12
+   else
+      if (shape == "circle")
+         label.checker(class=classCustom) 
+            input(type=type, name=name)
+            span.circle 
+            span.txt #{text}
+      else 
+         label.checker(class=classCustom) 
+            input(type=type , name=name)
+            span.sqr 
+            span.txt #{text}

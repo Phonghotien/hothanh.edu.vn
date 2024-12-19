@@ -1,0 +1,77 @@
+extends layout/layout
+block vars
+   -title = 'Đăng Nhập'
+   -mainClass = 'page-regis'
+   -bodyClass = 'home'
+   -hdClass = ''
+   -jsLibs = [JsJquery, JsAos, JsSplitting, JsGsap, JsScrollTrigger,JsSelect2,JsSplidesSroll]
+   -jsComponents = ['search','btnToTop','header', 'mobile','animated','textAni','scrollTrigger','popup','select2','form','addclass','fancybox','hoverParallax','component']
+   -cssLibs = [Cssfontawesomeall, Cssfontawesome, CssAos,CssSplitting,CssSelect2]
+   -cssComponents = ['animation','ani','banner','select2','form','box','block','card','popup']
+   -cssPages = ['home','quhu']
+
+block container
+   section.sec-hsign 
+      .hsign.parallaxDecJS   
+         .container 
+            .hsign-wrap.ss-pd 
+               .hsign-box.hsign-form 
+                  .hsign-flex
+                     .hsign-ctn
+                        .wrapper
+                           +ttp("<span>Đăng nhập</span>",
+                              "mb-24",
+                              "t-ctext ttdecor f-pri tshadow txt-spl",
+                              "Đăng nhập",
+                              "",
+                              "",
+                              "",
+                              "",
+                              false)
+                           .form-row.row 
+                              .form-col.col
+                                 .form-item 
+                                    span.form-lb.speci Username hoặc Số điện thoại 
+                                    .form-ip
+                                       input.form-input(type="text" placeholder="Username hoặc Số điện thoại")
+                              .form-col.col
+                                 .form-item 
+                                    span.form-lb.speci Mật khẩu
+                                    .form-ip
+                                       input.form-input(type="password" placeholder="Nhập mật khẩu")
+                                       .signPW 
+                                          +img("icon-eyes-open.svg")
+                                          +img("icon-eyes-close.svg")
+                              .form-col.col 
+                                 .form-check
+                                    +Checker("checkbox","","Ghi nhớ mật khẩu")
+                                    a(href="").form-link  Quên mật khẩu
+                              .form-col.col
+                                 +btn("Đăng nhập","btn-pri t-upper wfull btn-main","","btn-icon-1.png","button","")
+                              .form-col.col 
+                                 .form-with 
+                                    span.text hoặc đăng nhập với
+                                    .form-with-items
+                                       a(href="").form-with-item
+                                          +img("log-fb.svg")
+                                       a(href="").form-with-item
+                                          +img("log-gg.svg")
+                              .form-col.col 
+                                 p.form-account 
+                                    |Bạn chưa có tài khoản?
+                                    a(href="").link Đăng ký ngay
+
+                     .hsign-img
+                        .imgs 
+                           .dcor
+                              .dcor-img.decJS 
+                                 +img("exam-dcor3.png") 
+                              .dcor-img.decJS 
+                                 +img("exam-dcor4.png") 
+                              .dcor-img.decJS 
+                                 +img("exam-dcor5.png") 
+                              .dcor-img.decJS 
+                                 +img("exam-dcor1.png")  
+                           .img 
+                              .img-inner  
+                                 +img("sign-model.png")

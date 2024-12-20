@@ -4,14 +4,17 @@
    &-row {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
+      @include max(1200px){
+         --col-gap: 1.2rem;
+         --row-gap: 1.2rem;
+      }
    }
 
    &-col {
-      margin-bottom: calc(var(--row-gap)/2);
-
-      @include max(900px) {
-         margin-bottom: calc(var(--row-gap));
+      @include min(1201px){
+         margin-bottom: calc(var(--row-gap)/2);
       }
+
 
       &:nth-child(1),
       &:nth-child(2) {

@@ -1,0 +1,124 @@
+extends layout/layout
+block vars
+   -title = 'Thông tin tài khoản'
+   -mainClass = 'page-account'
+   -bodyClass = 'home'
+   -hdClass = ''
+   -jsLibs = [JsJquery, JsAos, JsSplitting, JsGsap, JsScrollTrigger,JsSelect2,JsSplidesSroll]
+   -jsComponents = ['search','btnToTop','header', 'mobile','animated','textAni','scrollTrigger','popup','select2','form','addclass','fancybox','hoverParallax','component']
+   -cssLibs = [Cssfontawesomeall, Cssfontawesome, CssAos,CssSplitting,CssSelect2]
+   -cssComponents = ['animation','ani','banner','select2','form','box','block','card','popup']
+   -cssPages = ['home','quhu']
+
+block container
+   +breadCrumb(["Bộ tài khoản"])
+   section.sec-haccount 
+      .haccount.ss-pd
+         .container 
+            .haccount-wrap
+               .haccount-box 
+                  .haccount-ctrls 
+                     a(href="").haccount-ctrl.active 
+                        +img("ic-account-usr.svg")
+                        span.txt Thông tin tài khoản
+                     a(href="").haccount-ctrl 
+                        +img("ic-account-his.svg")
+                        span.txt Lịch sử làm bài
+                  .haccount-panels 
+                     .haccount-panel 
+                        .heads 
+                           p.tt Thông tin tài khoản
+                           .haccount-btns 
+                              .haccount-btn Chỉnh sửa
+                              .haccount-btn Đổi mật khẩu
+                        .bodies 
+                           .bodies-head.row.gap-res 
+                              .bodies-item.col.yel 
+                                 .inner 
+                                    +img("account-ic1.svg")
+                                    .ctn 
+                                       p.name 720 giờ
+                                       p.val Tổng thời gian làm test
+                              .bodies-item.col.blue 
+                                 .inner 
+                                    +img("account-ic2.svg")
+                                    .ctn 
+                                       p.name 30 đề
+                                       p.val Số bài test đã hoàn thành
+                              .bodies-item.col.green
+                                 .inner 
+                                    +img("account-ic3.svg")
+                                    .ctn 
+                                       p.name 1.200 điểm
+                                       p.val Số điểm đã đạt được
+                           .bodies-f.row 
+                              .bodies-f-avatar.col 
+                                 .wrapper 
+                                    label.haccount-upload
+                                       input(type="file").upload-image
+                                       .haccount-upload-ava 
+                                          .img.preview-img 
+                                             +img("upload.jpg")
+                                          .haccount-upload-btn 
+                                             +img("ic-upload.svg")
+                                             span.txt Upload Photo
+                                    p.note Kích thước hình ảnh phải dưới 1MB và tỷ lệ hình ảnh cần là 1:1.
+                              .bodies-f-form.col 
+                                 .wrapper.hsign-form.haccount-form
+                                    form(action="")
+                                       .form-row.row 
+                                          .form-col.col.per3
+                                             .form-item 
+                                                span.form-lb Họ tên
+                                                .form-ip
+                                                   input(type="text" placeholder="Nguyễn Quốc Cường")
+                                          .form-col.col.per3
+                                             .form-item 
+                                                span.form-lb Giới tính
+                                                .form-ip
+                                                   input(type="text" placeholder="Nguyễn Quốc Cường")
+                                          .form-col.col.per3
+                                             .form-item 
+                                                span.form-lb Quốc gia
+                                                .form-ip
+                                                   select(name="" class="re-select-main" data-placeholder="Quốc gia")
+                                                      option(value="") Quốc gia
+                                                      option(value="1") 1   
+                                                      option(value="1") 1   
+                                                      option(value="1") 1   
+                                          .form-col.col.per3
+                                             .form-item 
+                                                span.form-lb Địa chỉ
+                                                .form-ip
+                                                   input(type="text" placeholder="Nguyễn Quốc Cường")
+                                          .form-col.col.per3
+                                             .form-item 
+                                                span.form-lb Phường
+                                                .form-ip
+                                                   select(name="" class="re-select-main" data-placeholder="Phường")
+                                                      option(value="") Phường
+                                                      option(value="1") 1   
+                                                      option(value="1") 1   
+                                                      option(value="1") 1   
+                                          .form-col.col.per3
+                                             .form-item 
+                                                span.form-lb Quận
+                                                .form-ip
+                                                   select(name="" class="re-select-main" data-placeholder="Quận")
+                                                      option(value="") Quận
+                                                      option(value="1") 1   
+                                                      option(value="1") 1   
+                                                      option(value="1") 1  
+                                          .form-col.col.per3
+                                             .form-item 
+                                                span.form-lb Số điện thoại
+                                                .form-ip
+                                                   input(type="text" placeholder="Nguyễn Quốc Cường")
+                                          .form-col.col.per3
+                                             .form-item 
+                                                span.form-lb Email
+                                                .form-ip
+                                                   input(type="text" placeholder="Nguyễn Quốc Cường")
+                                          .form-col.col.per3
+                                             .form-item 
+                                                +btn("Lưu thông tin","btn-pri btn-main","","btn-icon-1.png","","")

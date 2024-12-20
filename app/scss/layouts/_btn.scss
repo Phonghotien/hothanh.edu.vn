@@ -1,374 +1,214 @@
 .btn {
-   &-pri {
-      position: relative;
-      background: $color-pri;
-      border: .1rem solid $color-pri;
-      overflow: hidden;
-      transition: all .3s ease;
-      z-index: 1;
-      @include mid-flex;
-      flex-direction: row-reverse;
-      gap: .4rem;
-      border-radius: 4rem;
-      padding: 1.2rem 1.6rem;
-      width: max-content;
-      cursor: pointer;
-      // @include max(1200px) {
-      //     gap: .8rem;
-      // }
+  @include mid-flex;
+  text-align: center;
+  cursor: pointer;
+  padding: 1.2rem 2rem;
+  height: 4.8rem;
+  @include transition(0.5s, ease);
+  overflow: hidden;
+  position: relative;
+  background: var(--color-pri);
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  gap: 0.8rem;
+  border-radius: 100rem;
+  width: fit-content;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: #f5e8e8;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+  .icon-logo {
+    filter: brightness(0) invert(1);
+  }
+  @include hover {
+    color: var(--color-pri);
+    &::after {
+      left: 0;
+      width: 100%;
+    }
+    .icon-logo {
+      filter: unset;
+    }
+  }
+  @include max(600px) {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+  }
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+  .icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    @include mid-flex;
+    flex-shrink: 0;
+    font-weight: 500;
+    position: relative;
+    .t-hide {
+      position: absolute;
+      width: 14rem;
+      display: inline-block;
+      padding: 1.2rem;
+      font-size: 1.2rem;
+      background: var(--color-white);
+      border-radius: 0.4rem;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--color-tt);
+    }
+  }
 
-      &::before {
-         content: "";
-         position: absolute;
-         top: 0;
-         left: 0;
-         right: 0;
-         bottom: 0;
-         transform: scaleX(0);
-         transform-origin: 0 50%;
-         transition-property: transform;
-         transition-duration: .5s;
-         transition-timing-function: ease-out;
-         z-index: -1;
-         background: $color-white;
+  @include hover {
+    color: var(--color-pri);
+    &::after {
+      left: 0;
+      width: 100%;
+    }
+    .icon {
+      transform: unset;
+    }
+  }
+  &.center {
+    margin: 0 auto;
+  }
+  &.full {
+    width: 100%;
+  }
+  &.second {
+    background: #fff;
+    color: var(--color-pri);
+    border: 0.1rem solid var(--color-pri);
+    @include hover {
+      color: #fff;
+    }
+    &::after {
+      background: var(--color-pri);
+    }
+  }
+  &.trans {
+    background: transparent;
+    color: var(--color-pri);
+    border: 0.1rem solid var(--color-pri);
+    @include hover {
+      color: var(--color-white);
+
+      &.btn-icon {
+        .icon {
+          filter: brightness(0) invert(1);
+        }
       }
+    }
+    &:after {
+      background: var(--color-pri);
+    }
+  }
 
+  &.btn-logo {
+    .icon {
+      filter: brightness(0) invert(1);
+    }
+    @include hover {
       .icon {
-         width: 2.4rem;
-         height: 2.4rem;
-         @include mid-flex;
-         transition: all .45s ease;
-
-         @include max(800px) {
-            width: 2rem;
-            height: 2rem;
-         }
+        filter: unset;
       }
-
-      img {
-         transition: all .3s ease;
-         @include imgct;
-         filter: $filter-1;
-      }
-
-      i {
-         color: $color-white;
-         font-size: 1.5rem;
-      }
-
-      .txt {
-         font-family: var(--font-sec);
-         font-weight: 700;
-         color: $color-white;
-         font-size: 1.5rem;
-         transition: all .3s ease;
-
-         @include max(800px) {}
-      }
-
-      &:hover {
-         .txt {
-            color: $color-pri;
-         }
-
-         i {
-            color: $color-pri;
-         }
-
-         .icon {
-            // transform: rotate(45deg);
-
-         }
-
-         img {
-            filter: $filter;
-
-         }
-
-         &::before {
-            transform: scaleX(1);
-            transition-timing-function: cubic-bezier(.45, 1.64, .47, .66);
-         }
-
-      }
-   }
-
-   &-white {
-      position: relative;
-      background: $color-white;
-      border: .1rem solid $color-pri;
-      overflow: hidden;
-      transition: all .3s ease;
-      z-index: 1;
-      @include mid-flex;
-      flex-direction: row-reverse;
-      gap: .4rem;
-      border-radius: 4rem;
-      padding: 1.2rem 1.6rem;
-      width: max-content;
-      cursor: pointer;
-
-      @include max(1200px) {}
-
-      &::before {
-         content: "";
-         position: absolute;
-         top: 0;
-         left: 0;
-         right: 0;
-         bottom: 0;
-         transform: scaleX(0);
-         transform-origin: 0 50%;
-         transition-property: transform;
-         transition-duration: .5s;
-         transition-timing-function: ease-out;
-         z-index: -1;
-         background: $color-pri;
-      }
-
+    }
+  }
+  &.btn-test {
+    background: #fff;
+    color: var(--color-tt);
+    border: 0.1rem solid #dedee0;
+    padding: 1.2rem;
+    @include max(500px) {
+      padding: 0.8rem 1.2rem;
+    }
+    @include hover {
+      color: #fff;
       .icon {
-         width: 2.4rem;
-         height: 2.4rem;
-         @include mid-flex;
-         transition: all .45s ease;
-
-         @include max(800px) {
-            width: 2rem;
-            height: 2rem;
-         }
+        color: #fff;
       }
-
-      img {
-         transition: all .3s ease;
-         @include imgct;
-         filter: $filter;
-      }
-
+    }
+    .icon {
+      color: var(--color-pri);
       i {
-         color: $color-pri;
-         font-size: 1.5rem;
-
-
+        font-weight: 400;
       }
-
-      .txt {
-         font-family: var(--font-sec);
-         font-weight: 700;
-         color: $color-pri;
-         font-size: 1.5rem;
-
-         transition: all .3s ease;
-
-         @include max(800px) {}
-      }
-
-      &:hover {
-         border-color: transparent;
-
-         .txt {
-            color: $color-white;
-         }
-
-         i {
-            color: $color-white;
-         }
-
-         .icon {}
-
-         img {
-            filter: $filter-1;
-
-         }
-
-         &::before {
-            transform: scaleX(1);
-            transition-timing-function: cubic-bezier(.45, 1.64, .47, .66);
-         }
-
-      }
-   }
-
-   &-tran {
-      position: relative;
-      background: transparent;
-      border: .1rem solid $color-pri;
-      overflow: hidden;
-      transition: all .3s ease;
-      z-index: 1;
-      @include mid-flex;
-      flex-direction: row-reverse;
-      gap: .4rem;
-      border-radius: 4rem;
-      padding: 1.2rem 1.6rem;
-      width: max-content;
-      cursor: pointer;
-
-      @include max(1200px) {}
-
+    }
+  }
+}
+.lb-ip {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  input {
+    &:checked ~ .checkbox {
+      border-color: var(--color-pri);
       &::before {
-         content: "";
-         position: absolute;
-         top: 0;
-         left: 0;
-         right: 0;
-         bottom: 0;
-         transform: scaleX(0);
-         transform-origin: 0 50%;
-         transition-property: transform;
-         transition-duration: .5s;
-         transition-timing-function: ease-out;
-         z-index: -1;
-         background: $color-pri;
+        opacity: 1;
       }
-
-      .icon {
-         width: 2.4rem;
-         height: 2.4rem;
-         @include mid-flex;
-         transition: all .45s ease;
-
-         @include max(800px) {
-            width: 2rem;
-            height: 2rem;
-         }
+    }
+    &:checked ~ .check-radio {
+      border-color: var(--color-pri);
+      background: var(--color-pri);
+      &::before {
+        opacity: 1;
       }
-
-      img {
-         transition: all .3s ease;
-         @include imgct;
-         filter: $filter;
-      }
-
-      i {
-         color: $color-pri;
-         font-size: 1.5rem;
-
-
-      }
-
-      .txt {
-         font-family: var(--font-sec);
-         font-weight: 700;
-         color: $color-pri;
-         font-size: 1.5rem;
-
-         transition: all .3s ease;
-
-         @include max(800px) {}
-      }
-
-      &:hover {
-         border-color: transparent;
-
-         .txt {
-            color: $color-white;
-         }
-
-         i {
-            color: $color-white;
-         }
-
-         .icon {}
-
-         img {
-            filter: $filter-1;
-
-         }
-
-         &::before {
-            transform: scaleX(1);
-            transition-timing-function: cubic-bezier(.45, 1.64, .47, .66);
-         }
-
-      }
-   }
-
-   &-pad {
-      &-pri {
-         padding: 1.2rem 2.4rem;
-
-         @include max(600px) {
-            padding: .9rem 1.8rem;
-         }
-      }
-   }
-
-   &-shadow {
-      box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.20);
-   }
-
-   &-rev {
-      flex-direction: row;
-   }
-
-   &-rad {
-      &-1 {
-         border-radius: $radius-1;
-      }
-
-      &-2 {
-         border-radius: $radius-2;
-      }
-
-      &-3 {
-         border-radius: $radius-3;
-      }
-
-      &-4 {
-         border-radius: $radius-4;
-      }
-
-      &-5 {
-         border-radius: $radius-5;
-      }
-
-      &-6 {
-         border-radius: $radius-6;
-      }
-
-      &-7 {
-         border-radius: $radius-7;
-      }
-
-      &-8 {
-         border-radius: $radius-8;
-      }
-
-      &-9 {
-         border-radius: $radius-9;
-      }
-   }
-
-   &-center {
-      @include mid-flex;
-   }
-}
-
-.btn-dl {
-   padding: 1.2rem 4.2rem;
-   font-weight: 600;
-}
-
-
-.wfull {
-   width: 100%;
-}
-
-.whalf {
-   width: 50%;
-}
-
-.wfit {
-   width: fit-content;
-   margin: 0 auto;
-}
-
-.rowrev {
-   flex-direction: row-reverse;
-}
-
-.wcus {
-   width: 18rem;
-   margin: 0 auto;
-   max-width: 100%;
+    }
+  }
+  .checkbox {
+    width: 1.8rem;
+    height: 1.8rem;
+    @include mid-flex;
+    border-radius: 0.4rem;
+    flex-shrink: 0;
+    border: 0.2rem solid #8c8982;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    &::before {
+      content: "\f00c";
+      font-size: 1.2rem;
+      position: absolute;
+      @include mid;
+      font-family: "Font Awesome 6 Pro";
+      color: var(--color-pri);
+      transition: 0.3s ease-in-out;
+      opacity: 0;
+    }
+  }
+  .check-radio {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100rem;
+    flex-shrink: 0;
+    border: 0.2rem solid #8c8982;
+    background: #ffff;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      @include mid();
+      width: 1rem;
+      height: 1rem;
+      border-radius: 100rem;
+      background: #fff;
+      transition: 0.3s ease-in-out;
+      opacity: 0;
+      z-index: 1;
+    }
+  }
+  .t-txt {
+    font-size: 1.4rem;
+    color: #403e3a;
+  }
 }

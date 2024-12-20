@@ -1,133 +1,135 @@
 @import "../core";
 
 .teacher {
-   position: relative;
-   width: 100%;
-   height: 100%;
-   z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 
-   &:hover {
-      .teacher-tt {
-         color: $color-pri;
-      }
-   }
+  &:hover {
+    .teacher-tt {
+      color: $color-pri;
+    }
+  }
 
-   &-inner {
+  &-inner {
+    @include flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    align-items: center;
+
+    @include max(800px) {
+      gap: 1rem;
+    }
+  }
+
+  &-des {
+    @include flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    &-inner {
       @include flex;
-      flex-direction: column;
-      gap: 1.6rem;
       align-items: center;
+      gap: 0.4rem;
 
-      @include max(800px) {
-         gap: 1rem
+      .icon {
+        --wh: 2.4rem;
+        width: var(--wh);
+        height: var(--wh);
+        @include mid-flex;
+        flex-shrink: 0;
+
+        @include max(1200px) {
+          --wh: 1.8rem;
+        }
+
+        img {
+          @include imgct;
+        }
       }
-   }
+    }
 
-   &-des {
-      @include flex;
-      flex-direction: column;
-      gap: .8rem;
-
-      &-inner {
-         @include flex;
-         align-items: center;
-         gap: .4rem;
-
-         .icon {
-            --wh: 2.4rem;
-            width: var(--wh);
-            height: var(--wh);
-            @include mid-flex;
-            flex-shrink: 0;
-
-            @include max(1200px) {
-               --wh: 1.8rem;
-            }
-
-            img {
-               @include imgct;
-            }
-         }
-      }
-
-      .txt {
-         text-align: center;
-         @include fz-15;
-         font-weight: 400;
-         color: $color-text-4;
-      }
-   }
-
-   &-tt {
-      // @include fz-20;
-      font-size: 2rem;
-      ;
-      font-weight: 700;
-      color: $color-text;
+    .txt {
       text-align: center;
-      transition: all .45s ease;
-   }
+      @include fz-15;
+      font-weight: 400;
+      color: $color-text-4;
+    }
+  }
 
-   &-link {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-   }
+  &-tt {
+    // @include fz-20;
+    font-size: 2rem;
+
+    font-weight: 700;
+    color: $color-text;
+    text-align: center;
+    transition: all 0.45s ease;
+    @include max(500px) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &-link {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
 }
 
 .box {
-   background-color: $color-white;
-   width: 100%;
+  background-color: $color-white;
+  width: 100%;
 
-   @include min(1201px) {
-      padding: 0 2.4rem;
-   }
+  @include min(1201px) {
+    padding: 0 2.4rem;
+  }
 
-   &-inner {
-      --bder: 24rem;
-      position: relative;
-      display: block;
-      overflow: hidden;
-      z-index: 1;
-      border-radius: 0 0 var(--bder) var(--bder);
+  &-inner {
+    --bder: 24rem;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 0 0 var(--bder) var(--bder);
 
-      &::before {
-         position: absolute;
-         content: '';
-         left: 0;
-         right: 0;
-         width: 100%;
-         bottom: 0;
-         border-radius: var(--bder);
-         height: 80%;
-         background-color: $color-bg-2;
-         z-index: -1;
-      }
-
-   }
-
-   &-img {
-      @include imgPd(348, 250);
-      position: relative;
-
-      img {
-         @include imgCover;
-      }
-   }
-
-   &-decor {
+    &::before {
       position: absolute;
+      content: "";
       left: 0;
-      width: 110%;
-      -webkit-transform: translate(-31%, 65%);
-      transform: translate(-31%, 65%);
-      bottom: -1rem;
-      padding-top: calc(180/180 * 100%);
+      right: 0;
+      width: 100%;
+      bottom: 0;
+      border-radius: var(--bder);
+      height: 80%;
+      background-color: $color-bg-2;
+      z-index: -1;
+    }
+  }
 
-      img {
-         position: absolute;
-         inset: 0;
-         @include imgct;
-      }
-   }
+  &-img {
+    @include imgPd(348, 250);
+    position: relative;
+
+    img {
+      @include imgCover;
+    }
+  }
+
+  &-decor {
+    position: absolute;
+    left: 0;
+    width: 110%;
+    -webkit-transform: translate(-31%, 65%);
+    transform: translate(-31%, 65%);
+    bottom: -1rem;
+    padding-top: calc(180 / 180 * 100%);
+
+    img {
+      position: absolute;
+      inset: 0;
+      @include imgct;
+    }
+  }
 }

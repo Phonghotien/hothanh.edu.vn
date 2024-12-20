@@ -1,0 +1,218 @@
+extends layout/layout
+block vars
+   -title = 'Đề thi'
+   -mainClass = 'main-test-exam'
+   -bodyClass = ''
+   -hdClass = ''
+   -jsLibs = [JsJquery, JsAos]
+   -jsComponents = ['btnToTop','header', 'mobile','form','popup','collapse','component','sideJs','stepJs']
+   -cssLibs = [Cssfontawesomeall, Cssfontawesome]
+   -cssComponents = ['ani','form','box','block','popup']
+   -cssPages = ['quhu','detail','test']
+
+block container
+   .exams-hd 
+      .container 
+         .exams-hd-wrap 
+            .exams-hd-flex 
+               .hd-logo 
+                  .custom-logo-link 
+                     +img("logo.png")
+               .exams-hd-gr 
+                  span.t-text 
+                     | Listening: Question 1 of 200
+                  .b-group 
+                     span.icon-control.controlSidebar 
+                        i.fa-light.fa-sidebar-flip
+                     .testing-qw-time.testCountTime(data-time="")
+                        span.hours
+                           | 01 :
+                        span.mins
+                           | 59 :
+                        span.seconds
+                           | 30
+                        input(type="hidden")
+                     button(type="submit").btn
+                        span.icon 
+                           i.fa-light.fa-file-arrow-up
+                        span.inner 
+                           | Nộp bài ngay
+   .sec-exams.ss-pd 
+      .container 
+         .exams(id="testContainer" data-test-type="exam")
+            .exams-wrap.testing-side 
+               .exams-controler.testing-qw-ctr
+                  .btn.me-btn.testPrev.second
+                     span.icon 
+                        i.fa-light.fa-arrow-left
+                     span.inner 
+                        | Câu hỏi trước đó
+                  .btn.me-btn.testNext
+                     span.inner 
+                        | Câu hỏi tiếp theo
+                     span.icon 
+                        i.fa-light.fa-arrow-right
+               .exams-row.row 
+                  .col.col-4.side-fixed
+                     .side-close
+                        .fas.fa-times.close.icon
+                     .exams-side.side-fixed-wrap 
+                        .exams-side-wrapper
+                           each i,index in Array(7)
+                              .testing-question-items.testQuestionItemExam
+                                 .exams-part-title
+                                    | PART #{index+1}:
+                                 .exams-part-ques
+                                    .exams-part-list 
+                                       each i,index in Array(14)
+                                          .exams-ques-item.testQuesItem.testing-ques-item
+                                             .b-ans
+                                                if(index <= 8)
+                                                   span.t-text 
+                                                      | 0#{index+1}
+                                                else
+                                                   span.t-text 
+                                                      | #{index+1}
+                                                span.t-letter.testQuesLetter
+                                                   | ...
+                  .col.col-12
+                     .exams-main 
+                        .exams-main-wrap 
+                           .exams-main-body.testQuestionExam
+                              .exams-main-panel.testPanel
+                                 .exams-main-ctn 
+                                    .exams-main-audio.testing-audio 
+                                       .t-head 
+                                          span.t-text 
+                                             | Nghe đoạn hội thoại sau và trả lời các câu hỏi (29 - 32)
+                                       .testing-audio-head
+                                          .testing-audio-player.testAudioBtn
+                                             .icon-control
+                                                i.fa-light.fa-play
+                                          .testing-audio-timeline
+                                             .time-current.current
+                                                | 0.00
+                                             .time-wrapper 
+                                                .time-wave
+                                                .timeline.timeline-control 
+                                             .time-length.length
+                                    .exams-main-ques 
+                                       .exams-main-flex
+                                          each i,index in Array(1)
+                                             .exams-main-col
+                                                .testQuestion
+                                                   .exams-main-question 
+                                                      .t-head-number
+                                                         span.t-text 
+                                                            | Câu hỏi 
+                                                         span.t-num 
+                                                            | #{index+1}
+                                                      .t-head-question 
+                                                         p.t-note 
+                                                            | Chọn từ chính xác nhất cho một câu hoàn chỉnh bên dưới
+                                                      .exams-main-inner 
+                                                         .t-question
+                                                            p 
+                                                               | Mark the letter _________ on your answer sheet to indicate the word that differs from the other three in the position of primary stress in each of the following questions.
+                                                         .exams-main-recheck 
+                                                            label.me-recheck-item.testCheckItem.lb-ip
+                                                               input(type="radio" class="me-recheck-input" hidden name="radio")
+                                                               span.check-radio 
+                                                               p.t-txt 
+                                                                  | A  -  Talked
+                                                            label.me-recheck-item.testCheckItem.lb-ip
+                                                               input(type="radio" class="me-recheck-input" hidden name="radio")
+                                                               span.check-radio 
+                                                               p.t-txt 
+                                                                  | A  -  Talked
+                                                            label.me-recheck-item.testCheckItem.lb-ip
+                                                               input(type="radio" class="me-recheck-input" hidden name="radio")
+                                                               span.check-radio 
+                                                               p.t-txt 
+                                                                  | A  -  Talked
+                                                            label.me-recheck-item.testCheckItem.lb-ip
+                                                               input(type="radio" class="me-recheck-input" hidden name="radio")
+                                                               span.check-radio 
+                                                               p.t-txt 
+                                                                  | A  -  Talked
+                              .exams-main-panel.testPanel
+                                 .exams-main-ctn 
+                                    .exams-main-ques 
+                                       .exams-main-flex
+                                          each i,index in Array(1)
+                                             .exams-main-col
+                                                .testQuestion
+                                                   .exams-main-question 
+                                                      .t-head-number
+                                                         span.t-text 
+                                                            | Câu hỏi 
+                                                         span.t-num 
+                                                            | #{index+1}
+                                                      .t-head-question 
+                                                         p.t-note 
+                                                            | Chọn từ chính xác nhất cho một câu hoàn chỉnh bên dưới
+                                                      .exams-main-inner 
+                                                         .t-question
+                                                            p 
+                                                               | Mark the letter _________ on your answer sheet to indicate the word that differs from the other three in the position of primary stress in each of the following questions.
+                                                         .exams-main-recheck 
+                                                            label(for="a").me-recheck-item.testCheckItem.lb-ip
+                                                               input(type="checkbox" class="me-recheck-input" value="a" hidden id="a")
+                                                               span.checkbox 
+                                                               p.t-txt 
+                                                                  | A  -  Talked
+                                                            label(for="b").me-recheck-item.testCheckItem.lb-ip
+                                                               input(type="checkbox" class="me-recheck-input" value="b" hidden id="b")
+                                                               span.checkbox 
+                                                               p.t-txt 
+                                                                  | B  -  Watched
+                                                            label(for="c").me-recheck-item.testCheckItem.lb-ip
+                                                               input(type="checkbox" class="me-recheck-input" value="c" hidden id="c")
+                                                               span.checkbox 
+                                                               p.t-txt 
+                                                                  | C  -  Learned
+                                                            label(for="d").me-recheck-item.testCheckItem.lb-ip
+                                                               input(type="checkbox" class="me-recheck-input" value="d" hidden id="d")
+                                                               span.checkbox 
+                                                               p.t-txt 
+                                                                  | D  -  Missed
+                              .exams-main-panel.testPanel
+                                 .exams-main-ctn 
+                                    .exams-main-ques
+                                       .testQuestion
+                                          .exams-main-question 
+                                             .t-head-number
+                                                span.t-text 
+                                                   | Câu hỏi 
+                                                span.t-num 
+                                                   | 1
+                                             .t-head-question 
+                                                p.t-note 
+                                                   | Kéo đáp án đúng vào chỗ trống:
+                                             .exams-main-inner 
+                                                .exams-main-drag.testDragBlock 
+                                                   .t-question
+                                                      | When filling out the order form, please 
+                                                      span.t-box-drag.me-question-drog.testDragBox
+                                                         input(type="radio" hidden).meQuestionBlank
+                                                         span.t-text 
+                                                            | Kéo đáp án vào đây
+                                                         i.fa-solid.fa-xmark.testDragClear.icon-remove
+                                                      |  your address clearly to prevent delays. 
+                                                   .exams-main-recheck.exams-main-recheck-drag 
+                                                      .exams-main-recheck-item-drag.testDragItems
+                                                         span.t-text(draggable="true" data-anw="see" data-anw_value="a")
+                                                            | see
+                                                      .exams-main-recheck-item-drag.testDragItems
+                                                         span.t-text(draggable="true" data-anw="has-lived" data-anw_value="b")
+                                                            | has lived
+                                                      .exams-main-recheck-item-drag.testDragItems
+                                                         span.t-text(draggable="true" data-anw="is-living" data-anw_value="c")
+                                                            | is living
+                                                      .exams-main-recheck-item-drag.testDragItems
+                                                         span.t-text(draggable="true" data-anw="last-saw" data-anw_value="d")
+                                                            | last saw
+   .side-open
+      .side-open-wrap
+         .fa-light.fa-list-ol.icon
+   .side-overlay

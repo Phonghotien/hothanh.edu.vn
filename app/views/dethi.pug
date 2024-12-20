@@ -1,0 +1,244 @@
+extends layout/layout
+block vars
+   -title = 'Đề thi'
+   -mainClass = 'page-otest main-test-page'
+   -bodyClass = ''
+   -hdClass = ''
+   -jsLibs = [JsJquery, JsAos]
+   -jsComponents = ['btnToTop','header', 'mobile','form','popup','collapse','component','sideJs','stepJs']
+   -cssLibs = [Cssfontawesomeall, Cssfontawesome]
+   -cssComponents = ['ani','form','box','block','popup']
+   -cssPages = ['quhu','detail','test']
+
+block container 
+   .sec-bread-test
+      .container 
+         .bread-test
+            .b-row.row 
+               .col.col-6 
+                  .b-gr 
+                     a(href="").icon-link 
+                        i.fa-light.fa-arrow-left
+                     .b-ctn
+                        span.t-name 
+                           | Practice Set TOEIC (old format) Test 3
+                        .t-list.exam-it
+                           .b-if
+                              .b-box
+                                 span.icon 
+                                    +img("icon-exam-if (1).svg")
+                                 .t-gr 
+                                    span.t-text
+                                       | 39k
+                                    span.t-txt 
+                                       | lượt làm Test
+                              .b-box
+                                 span.icon 
+                                    +img("icon-exam-if (2).svg")
+                                 .t-gr 
+                                    span.t-text
+                                       | 120
+                                    span.t-txt 
+                                       | phút
+                              .b-box
+                                 span.icon 
+                                    +img("icon-exam-if (3).svg")
+                                 .t-gr 
+                                    span.t-text
+                                       | 200
+                                    span.t-txt 
+                                       | câu hỏi
+               .col.col-right
+                  .b-share 
+                     .t-gr.getlink
+                        span.icon 
+                           i.fa-light.fa-copy
+                        span.t-text 
+                           | Copy link
+                        span.getlink-note
+                           | Đã sao chép
+                     a(href="").i-link
+                        +img("icon-share-test (1).svg") 
+                     a(href="").i-link
+                        +img("icon-share-test (2).svg") 
+                     a(href="").i-link
+                        +img("icon-share-test (3).svg") 
+                     a(href="").i-link
+                        +img("icon-share-test (4).svg")
+   .sec-otest.ss-pd 
+      .container 
+         .otest
+            .otest-wrap 
+               .otest-row.row
+                  .col.col-6
+                     .otest-image 
+                        .inner 
+                           +img("otest-img.jpg") 
+                  .col.col-6
+                     .otest-wrapper
+                        .otest-panel.accordion
+                           .b-head.accordion-header
+                              .t-gr 
+                                 span.icon 
+                                    i.fa-solid.fa-chevron-down
+                                 span.t-text 
+                                    | Test gồm 7 phần 
+                              .t-box 
+                                 .exam-it
+                                    .b-if
+                                       .b-box
+                                          span.icon 
+                                             +img("icon-exam-if (1).svg")
+                                          .t-gr 
+                                             span.t-text
+                                                | 39k
+                                             span.t-txt 
+                                                | lượt làm Test
+                                       .b-box
+                                          span.icon 
+                                             +img("icon-exam-if (2).svg")
+                                          .t-gr 
+                                             span.t-text
+                                                | 120
+                                             span.t-txt 
+                                                | phút
+                                       .b-box
+                                          span.icon 
+                                             +img("icon-exam-if (3).svg")
+                                          .t-gr 
+                                             span.t-text
+                                                | 200
+                                             span.t-txt 
+                                                | câu hỏi
+                           .b-block.accordion-content
+                              .b-list 
+                                 -
+                                    var arrs = [
+                                       {
+                                          tt:"Mô tả hình ảnh",
+                                       },
+                                       {
+                                          tt:"Hỏi - Đáp",
+                                       },
+                                       {
+                                          tt:"Đoạn hội thoại",
+                                       },
+                                       {
+                                          tt:"Bài nói chuyện ngắn - độc thoại",
+                                       },
+                                       {
+                                          tt:"Câu không hoàn chỉnh",
+                                       },
+                                       {
+                                          tt:"Hoàn thành đoạn văn",
+                                       },
+                                       {
+                                          tt:"Đọc hiểu đoạn đơn",
+                                       },
+                                    ]
+                                 each i,index in arrs
+                                    .b-it 
+                                       +Checker("checkbox","",`${i.tt}`,"ck-pri")
+                                       .b-gr 
+                                          .t-gr 
+                                             span.icon
+                                                +img("icon-time2.svg")
+                                             span.t-txt 
+                                                span.fw-5
+                                                   | 18 
+                                                | phút  
+                                          .t-gr 
+                                             span.icon
+                                                +img("icon-doc2.svg")
+                                             span.t-txt 
+                                                span.fw-5 
+                                                   | 28 
+                                                | câu hỏi
+                        .b-switch 
+                           .switch 
+                              input(type="checkbox" class="switch-check" id="switch-check")
+                              label(for="switch-check").lb-switch
+                                 span.slider
+                           span.t-text
+                              | Mô phỏng thi thật
+                        .b-btn 
+                           .btn-main.btn-pri
+                              span.icon
+                                 i.fa-light.fa-circle-question
+                              span.txt 
+                                 | Làm toàn bộ đề
+                           .btn-tran.btn-main 
+                              span.icon
+                                 i.fa-light.fa-circle-question
+                              span.txt 
+                                 | Luyện tập chọn Part 
+         .guide-already.stepJs
+            .guide-already-steps.stepPanel
+               .guide-already-step.rules.required
+                  .guide-title.t-title.t-sec
+                     | NỘI QUY BÀI THI
+                  .rules-content.mona-content.t-des
+                     ol
+                        li
+                           | Đề thi thuộc bản quyền của IIG Việt Nam. Nghiêm cấm thí sinh sao chép, phát tán, lấy thông tin bài thi dưới mọi hình thức. Trong trường hợp vi phạm, xử lý theo pháp luật hiện hành.
+                        li
+                           | Bài thi thử Online được thiết kế và xây dựng mô phỏng lại định dạng bài thi thật, không có giá trị quy đổi.
+                        li
+                           | Làm thi thử trên đúng tài khoản đã đăng ký bằng máy tính để bàn hoặc laptop (không thi trên điện thoại, máy tính bảng).
+                        li Khuyến nghị chỉ sử dụng trình duyệt Chrome để đảm bảo quá trình làm bài ổn định.
+                        li
+                           | Mỗi code chỉ được làm một lần duy nhất. Thí sinh đọc kĩ hướng dẫn dự thi để nắm chắc được các bước này trước khi làm bài thi. Thí sinh có thể xem trực tiếp tại mục Tin tức của trang. (Áp dụng với bài thi sử dụng code)
+                  label(for='rules_required1').checker.ck-pri
+                     input#rules_required1(type='checkbox' hidden='').required
+                     span.rules-required-mask.sqr
+                     span.rules-required-text.txt
+                        | Tôi đã đọc và đồng ý với quy định làm bài thi
+            .guide-already-steps.guide.stepPanel
+               .guide-title
+                  | HƯỚNG DẪN LÀM BÀI
+               .guide-content.mona-content.t-des
+                  p
+                     strong Hướng dẫn chung:
+                  p Bài kiểm tra được chia làm hai phần: phần nghe và phần đọc
+                  p
+                     strong Section 1: Listening
+                     br
+                     | Thời gian làm phần kiểm tra Nghe là 45 phút. Bao gồm 4 phần từ Part 1 – Part 4. Bạn sẽ lần lượt lắng nghe và chọn câu trả lời đúng nhất tương ứng với câu hỏi được đặt ra bằng cách chọn đáp án đúng trên hệ thống.
+                  p
+                     strong Section 2: Reading
+                     br
+                  | Chuyên mục đọc – hiểu. Thời gian cho phần này kéo dài 75 phút. Mục này gồm có 3 phần, từ Part 5 – Part 7 Bạn được khuyến khích trả lời nhiều câu hỏi càng tốt trong thời gian cho phép, Bạn phải đánh dấu câu trả lời của bạn vào phiếu trả lời, Đừng viết câu trả lời của bạn trong đề thi
+               label(for='rules_required2').checker.ck-pri
+                  input#rules_required2(type='checkbox' hidden='').required
+                  span.rules-required-mask.sqr
+                  span.rules-required-text.txt
+                     | Tôi đã đọc và đồng ý với quy định làm bài thi
+            .guide-already-steps.stepPanel
+               .guide-title.t-title.t-sec
+                  | KIỂM TRA ÂM THANH
+               .guide-content.mona-content.t-des.t-center
+                  p
+                     | Vui lòng nghe đoạn âm thanh sau để kiểm tra âm thanh 
+               .audio-check
+                  .audio-check-control
+                     label(for="volumeControl").audio-check-ip
+                        span.icon-volume#volumeIcon
+                           i.fa-light.fa-volume
+                        input(type="range" id="volumeControl"  min="0" max="1" step="0.01" value="0.5") 
+                  .audio-check-ctn 
+                     audio(src="https://agena-edu.monamedia.net/wp-content/uploads/2024/08/eco_toeic_1000_test_1_1.mp3" controls).controlAudioJs
+            .guide-already-steps.stepPanel
+               .guide-title.t-title.t-sec
+                  | CẤU TRÚC ĐỀ THI
+               .guide-content.mona-content.t-des
+                  p 
+                     | ABC
+            .guide-action.b-btn.b-btn-start.stepControl
+               button.btn-tran.btn-main.testGuideCountinue.disabled(type='button')
+                  span.icon
+                     i.fa-light.fa-circle-arrow-right
+                  span.txt
+                     | Tiếp tục                                   
+               button.btn-pri.btn-main.testStart.invisible(type='button')
+                  span.txt
+                     | Bắt đầu kiểm tra                                       

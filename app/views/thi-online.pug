@@ -1,0 +1,48 @@
+extends layout/layout
+block vars
+   -title = 'Thi Online'
+   -mainClass = 'page-exam-online'
+   -bodyClass = 'home'
+   -hdClass = ''
+   -jsLibs = [JsJquery, JsAos, JsSplitting,JsSwiper,JsSelect2,JsSplide,JsSplidesSroll,JsFancybox]
+   -jsComponents = ['search','btnToTop','header', 'mobile','animated','textAni','swiper','select2','form','splide','addclass','countUp','popup','fancybox','hoverParallax','collapse','component']
+   -cssLibs = [Cssfontawesomeall, Cssfontawesome, CssAos,CssSplitting,CssSelect2,CssSwiper,CssSplide,CssFancybox]
+   -cssComponents = ['animation','ani','banner','swiper','select2','form','box','block','popup','card']
+   -cssPages = ['home','news','quhu','detail']
+
+block container
+   .sec-bnoe 
+      .container
+         +breadCrumb(["Thi online"])
+         .bnoe
+            .dcor.x1
+               +img("exam-dcor10.png")
+            .dcor.x2
+               +img("exam-dcor9.png")
+            .dcor.x3
+               +img("exam-dcor8.png")
+            .dcor.x4
+               +img("exam-dcor11.png")
+            .bnoe-wrap 
+               .bnoe-ctn
+                  .bnoe-head
+                     .bnoe-tt.title-pri.tshadow(data-spl)
+                        | Free Online Tests:
+                        span.pri TOEIC Online 
+                        | Practice Tests
+                     p.bnoe-des 
+                        | Cùng Hồ Thành khám phá bộ đề tự học online vô cùng chất lượng.
+                  .bnoe-box 
+                     .t-list 
+                        a(href="").t-link.active
+                           | Tất cả 
+                        a(href="").t-link
+                           | TOEIC Academic
+                        a(href="").t-link
+                           | TOEIC General
+                        a(href="").t-link
+                           | Mini Test
+                  .box-search 
+                     input(type="search" Placeholder="Nhập nội dung")
+                     button(type="submit").btn-search
+                        +img("icon-search.svg")

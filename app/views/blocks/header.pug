@@ -24,24 +24,16 @@ header.header(data-lenis-prevent)
                         +menuItem('Tin tức', '')
                         +menuItem('Liên hệ', '')
                .header-action
-                  //- .header-search.searchMain(title="Search")
-                  //-   .header-search-icon.searchIconJs 
-                  //-     +img("search.png")
-                  //-   .header-search-overlay.searchOverlayJs
-                  //-   .header-search-bar.searchBarJs
-                  //-     .header-search-close.searchCloseJs
-                  //-       i.fa-regular.fa-xmark
-                  //-     .header-search-in
-                  //-       .header-search-top 
-                  //-         .header-search-logo
-                  //-           +img("logo.png")
-                  //-         h3.tt Nhập thông tin cần tìm kiếm 
-                  //-       .header-search-bar-input 
-                  //-         input.input.searchjs(type="text" placeholder="Tìm kiếm")
-                  //-         a.link(href="")
-                  //-           +img("search.png")
-                  +btn("Đăng nhập","btn-tran t-upper btn-main","","btn-icon-2.png","","")
-                  +btn("Thi thử ngay","btn-pri btn-test t-upper btn-main popup-open","","btn-icon-1.png","button","popupRes")
+                  .btn.trans.btn-icon
+                     span.icon 
+                        +img("btn-icon-2.png")
+                     span.inner 
+                        | ĐĂNG NHẬP
+                  .btn.popupRes.btn-logo
+                     span.icon 
+                        +img("icon-btn-logo.png")
+                     span.inner
+                        | THI THỬ NGAY 
                   .menu-icon
                      #hamburger.hd-burger
                         .burger
@@ -92,7 +84,7 @@ header.header(data-lenis-prevent)
                      .icon 
                         +img("ct-icon-3.png")
                      p.txt luyenthihothanh@gmail.com 
-      .mobile-mxh
-         h3.mobile-title
-            | mạng xã hội
-         +social("",[{images: "social-1.png"},{images: "social-2.png"},{images: "social-3.png"},{images: "social-4.png"}],"")
+            .mobile-mxh
+               h3.mobile-title
+                  | mạng xã hội
+               +social("",[{images: "social-1.png"},{images: "social-2.png"},{images: "social-3.png"},{images: "social-4.png"}],"")

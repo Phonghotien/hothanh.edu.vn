@@ -12,25 +12,37 @@ mixin mobileMxh(links)
          a.mobile-mxh-link(href="")
             +img(link.imgSrc)
 
-mixin btn(name, classbtn, classIcon, img, button, datapop)
-   if button !== "button"
-      a(class=classbtn href="#")
-         span.txt #{name}
-         if classIcon || img
-            .icon
-               if classIcon
-                  i(class=classIcon)
-               if img
-                  +img(img)
+mixin btn(text, type, classCustom, icon=false)
+   if !classCustom
+      if type == "button"
+         button.btn(type="submit", class=classCustom)
+            span.inner #{text}
+            if icon
+               i.fa-light.fa-arrow-right.icon
+            else if icon !== false
+               i(class=icon)
+      else
+         a.btn(href="", class=classCustom)
+            if icon
+               img(src="./assets/images/icon-btn-logo.png", alt="").icon-logo
+            else if icon !== false
+               i(class=icon)
+            span.inner #{text}
    else
-      button(type="submit" class=classbtn data-popup=datapop ? datapop : null)
-         span.txt #{name}
-         if classIcon || img
-            .icon
-               if classIcon
-                  i(class=classIcon)
-               if img
-                  +img(img)
+      if type == "button"
+         button.btn(type="submit", class=classCustom)
+            span.inner #{text}
+            if icon
+               i.fa-light.fa-arrow-right.icon
+            else if icon !== false
+               i(class=icon)
+      else
+         a.btn(href="", class=classCustom)
+            span.inner #{text}
+            if icon
+               i.fa-light.fa-arrow-right.icon
+            else if icon !== false
+               i(class=icon)
 
 mixin footerList(arr)
    ul.footer-list(class="menu-list")
@@ -239,7 +251,6 @@ mixin hgallerySlider(rows, itemsPerRow)
                               .hgallery-img-inner
                                  +img(`gallery-${index + 1}.jpg`)
 
-//================ Quhu Mixin
 mixin hTitle48(tt)
    h3.h-title.fz-48!=tt
 mixin Heads(classCustom)

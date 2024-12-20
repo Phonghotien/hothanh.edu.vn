@@ -45,14 +45,18 @@ block container
                                              option(value="demo")
                                                 | Danh mục 111
                                        .hbanner-search 
-                                          +btn("Tìm kiếm","btn-pri btn-rev btn-main","","search.png","button","")
+                                          button(type="submit").btn
+                                             span.inner 
+                                                | Tìm kiếm
+                                             span.icon 
+                                                i.fa-light.fa-magnifying-glass
                                     .hbanner-block
                                        .hbanner-list.row
                                              .hbanner-item.col.col-3 
                                                 .inner 
-                                                      .icon 
-                                                         +img("hcourse-icon-1.png")
-                                                      p.txt Luyện thi Đại học
+                                                   .icon 
+                                                      +img("hcourse-icon-1.png")
+                                                   p.txt Luyện thi Đại học
                                              .hbanner-item.col.col-3 
                                                 .inner 
                                                    .icon 
@@ -70,7 +74,6 @@ block container
                                                    p.txt Học Online, Offline
                                     .hbanner-btn 
                                        +btn("Các khóa học","btn-pri btn-main","","btn-icon-1.png","","")
-
                         .hbanner-col.col.col-7 
                            .hbanner-swiper 
                               .gldecor.hat.add-class
